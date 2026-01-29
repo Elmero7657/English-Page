@@ -4,267 +4,198 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FIFA World Cup Legacy | 1930-2022</title>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg-void: #000000;
-            --bg-deep: #050507;
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #111118;
-            --bg-tertiary: #18181f;
-            --bg-elevated: #1f1f28;
-            --bg-card: #141419;
-            --gold-primary: #d4af37;
-            --gold-light: #f4d03f;
-            --gold-dark: #b8960c;
-            --gold-glow: rgba(212, 175, 55, 0.15);
-            --gold-intense: rgba(212, 175, 55, 0.4);
-            --accent-emerald: #10b981;
-            --accent-ruby: #ef4444;
-            --accent-sapphire: #3b82f6;
-            --accent-amethyst: #8b5cf6;
-            --text-white: #ffffff;
-            --text-primary: #f5f5f7;
-            --text-secondary: #a1a1aa;
-            --text-muted: #71717a;
-            --text-subtle: #52525b;
-            --border-subtle: rgba(255, 255, 255, 0.06);
-            --border-light: rgba(255, 255, 255, 0.1);
-            --border-gold: rgba(212, 175, 55, 0.3);
-            --gradient-dark: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-primary) 100%);
-            --gradient-card: linear-gradient(145deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
-            --gradient-gold: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-primary) 50%, var(--gold-light) 100%);
-            --gradient-hero: radial-gradient(ellipse at 50% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
-            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.5);
-            --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.6);
-            --shadow-gold: 0 0 30px rgba(212, 175, 55, 0.2);
-            --shadow-glow: 0 0 60px rgba(212, 175, 55, 0.15);
-            --font-display: 'Bebas Neue', sans-serif;
-            --font-heading: 'Oswald', sans-serif;
-            --font-body: 'Cormorant Garamond', serif;
-            --font-mono: 'JetBrains Mono', monospace;
-            --space-xs: 0.25rem;
-            --space-sm: 0.5rem;
-            --space-md: 1rem;
-            --space-lg: 1.5rem;
-            --space-xl: 2rem;
-            --space-2xl: 3rem;
-            --space-3xl: 4rem;
-            --space-4xl: 6rem;
-            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-            --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
-            --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-            --nav-height: 80px;
-            --container-max: 1400px;
-            --section-padding: 120px;
-        }
+        :root{--bg-void:#000;--bg-deep:#050507;--bg-primary:#0a0a0f;--bg-secondary:#111118;--bg-tertiary:#18181f;--bg-card:#141419;--gold-primary:#d4af37;--gold-light:#f4d03f;--gold-dark:#b8960c;--gold-glow:rgba(212,175,55,0.15);--accent-emerald:#10b981;--accent-ruby:#ef4444;--text-white:#fff;--text-primary:#f5f5f7;--text-secondary:#a1a1aa;--text-muted:#71717a;--text-subtle:#52525b;--border-subtle:rgba(255,255,255,0.06);--border-light:rgba(255,255,255,0.1);--border-gold:rgba(212,175,55,0.3);--gradient-card:linear-gradient(145deg,var(--bg-secondary),var(--bg-primary));--gradient-gold:linear-gradient(135deg,var(--gold-dark),var(--gold-primary),var(--gold-light));--shadow-lg:0 8px 40px rgba(0,0,0,0.6);--shadow-gold:0 0 30px rgba(212,175,55,0.2);--font-display:'Bebas Neue',sans-serif;--font-heading:'Oswald',sans-serif;--font-body:'Cormorant Garamond',serif;--font-mono:'JetBrains Mono',monospace;--nav-height:80px;--container-max:1400px;--section-padding:120px}
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:var(--font-body);background:var(--bg-void);color:var(--text-primary);line-height:1.6;overflow-x:hidden}
+        ::selection{background:var(--gold-primary);color:var(--bg-void)}
+        ::-webkit-scrollbar{width:8px}
+        ::-webkit-scrollbar-track{background:var(--bg-secondary)}
+        ::-webkit-scrollbar-thumb{background:var(--gold-dark);border-radius:4px}
 
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: var(--gold-dark) var(--bg-secondary); }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--bg-secondary); }
-        ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--gold-primary); }
-        body { font-family: var(--font-body); background: var(--bg-void); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-        ::selection { background: var(--gold-primary); color: var(--bg-void); }
+        .preloader{position:fixed;inset:0;background:var(--bg-void);z-index:100000;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2rem;transition:opacity 1s,visibility 1s}
+        .preloader.loaded{opacity:0;visibility:hidden}
+        .preloader-logo{font-family:var(--font-display);font-size:clamp(3rem,8vw,6rem);color:var(--gold-primary);letter-spacing:0.2em;animation:fadeInUp 1s ease}
+        .preloader-bar{width:200px;height:2px;background:var(--bg-tertiary);overflow:hidden}
+        .preloader-progress{height:100%;background:var(--gradient-gold);animation:load 2s ease forwards}
+        .preloader-text{font-family:var(--font-mono);font-size:0.75rem;color:var(--text-muted);letter-spacing:0.3em;text-transform:uppercase}
+        @keyframes load{to{width:100%}}
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 
-        .cursor { width: 20px; height: 20px; border: 2px solid var(--gold-primary); border-radius: 50%; position: fixed; pointer-events: none; z-index: 99999; transition: transform 0.15s var(--ease-out-expo), opacity 0.15s ease, background 0.15s ease; transform: translate(-50%, -50%); mix-blend-mode: difference; }
-        .cursor-dot { width: 4px; height: 4px; background: var(--gold-primary); border-radius: 50%; position: fixed; pointer-events: none; z-index: 99999; transform: translate(-50%, -50%); }
-        .cursor.hover { transform: translate(-50%, -50%) scale(2); background: var(--gold-glow); border-color: var(--gold-light); }
+        .cursor{width:20px;height:20px;border:2px solid var(--gold-primary);border-radius:50%;position:fixed;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);mix-blend-mode:difference;transition:transform .15s}
+        .cursor-dot{width:4px;height:4px;background:var(--gold-primary);border-radius:50%;position:fixed;pointer-events:none;z-index:99999;transform:translate(-50%,-50%)}
+        .cursor.hover{transform:translate(-50%,-50%) scale(2);background:var(--gold-glow)}
 
-        .preloader { position: fixed; inset: 0; background: var(--bg-void); z-index: 100000; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: var(--space-xl); }
-        .preloader-logo { font-family: var(--font-display); font-size: clamp(3rem, 8vw, 6rem); color: var(--gold-primary); letter-spacing: 0.2em; opacity: 0; animation: fadeInUp 1s var(--ease-out-expo) forwards; }
-        .preloader-bar { width: 200px; height: 2px; background: var(--bg-tertiary); border-radius: 2px; overflow: hidden; opacity: 0; animation: fadeIn 0.5s ease 0.5s forwards; }
-        .preloader-progress { height: 100%; background: var(--gradient-gold); width: 0%; animation: loadProgress 2s var(--ease-out-expo) 0.5s forwards; }
-        .preloader-text { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.3em; text-transform: uppercase; opacity: 0; animation: fadeIn 0.5s ease 0.7s forwards; }
-        .preloader.loaded { animation: preloaderExit 1s var(--ease-out-expo) forwards; }
-        @keyframes loadProgress { to { width: 100%; } }
-        @keyframes preloaderExit { 0% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(1.1); visibility: hidden; } }
+        .bg-noise{position:fixed;inset:0;opacity:0.03;pointer-events:none;z-index:1;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+        .bg-grid{position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(var(--border-subtle) 1px,transparent 1px),linear-gradient(90deg,var(--border-subtle) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at center,#000 0%,transparent 70%)}
+        .bg-glow{position:fixed;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,var(--gold-glow),transparent 70%);pointer-events:none;filter:blur(80px);opacity:0.5}
 
-        .bg-noise { position: fixed; inset: 0; opacity: 0.03; pointer-events: none; z-index: 1; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); }
-        .bg-grid { position: fixed; inset: 0; pointer-events: none; z-index: 0; background-image: linear-gradient(var(--border-subtle) 1px, transparent 1px), linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%); }
-        .bg-glow { position: fixed; width: 800px; height: 800px; border-radius: 50%; background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%); pointer-events: none; z-index: 0; filter: blur(80px); opacity: 0.5; transition: transform 0.5s var(--ease-out-quart); }
+        .nav{position:fixed;top:0;left:0;right:0;height:var(--nav-height);z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 4rem;transition:all .4s}
+        .nav.scrolled{background:rgba(5,5,7,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border-subtle)}
+        .nav-logo{display:flex;align-items:center;gap:1rem;text-decoration:none}
+        .nav-logo-icon{width:45px;height:45px;background:var(--gradient-gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+        .nav-logo-text{font-family:var(--font-display);font-size:1.5rem;color:var(--text-white);letter-spacing:0.15em}
+        .nav-logo-text span{color:var(--gold-primary)}
+        .nav-menu{display:flex;gap:4rem;list-style:none}
+        .nav-link{font-family:var(--font-heading);font-size:0.85rem;color:var(--text-secondary);text-decoration:none;text-transform:uppercase;letter-spacing:0.15em;position:relative;transition:color .3s}
+        .nav-link::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:1px;background:var(--gradient-gold);transition:width .4s}
+        .nav-link:hover,.nav-link.active{color:var(--gold-primary)}
+        .nav-link:hover::after,.nav-link.active::after{width:100%}
+        .nav-cta{font-family:var(--font-heading);font-size:0.85rem;color:var(--bg-void);background:var(--gradient-gold);border:none;padding:1rem 2rem;text-transform:uppercase;letter-spacing:0.15em;cursor:pointer;transition:transform .3s,box-shadow .3s}
+        .nav-cta:hover{transform:translateY(-2px);box-shadow:var(--shadow-gold)}
 
-        .nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-height); z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 0 var(--space-3xl); background: transparent; transition: all 0.4s var(--ease-out-expo); }
-        .nav.scrolled { background: rgba(5, 5, 7, 0.9); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-subtle); }
-        .nav-logo { display: flex; align-items: center; gap: var(--space-md); text-decoration: none; }
-        .nav-logo-icon { width: 45px; height: 45px; background: var(--gradient-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--bg-void); box-shadow: var(--shadow-gold); }
-        .nav-logo-text { font-family: var(--font-display); font-size: 1.5rem; color: var(--text-white); letter-spacing: 0.15em; }
-        .nav-logo-text span { color: var(--gold-primary); }
-        .nav-menu { display: flex; align-items: center; gap: var(--space-3xl); list-style: none; }
-        .nav-link { position: relative; font-family: var(--font-heading); font-size: 0.85rem; font-weight: 400; color: var(--text-secondary); text-decoration: none; text-transform: uppercase; letter-spacing: 0.15em; padding: var(--space-sm) 0; transition: color 0.3s ease; }
-        .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gradient-gold); transition: width 0.4s var(--ease-out-expo); }
-        .nav-link:hover { color: var(--gold-primary); }
-        .nav-link:hover::after { width: 100%; }
-        .nav-link.active { color: var(--gold-primary); }
-        .nav-link.active::after { width: 100%; }
-        .nav-cta { position: relative; font-family: var(--font-heading); font-size: 0.85rem; font-weight: 500; color: var(--bg-void); background: var(--gradient-gold); border: none; padding: var(--space-md) var(--space-xl); text-transform: uppercase; letter-spacing: 0.15em; cursor: pointer; overflow: hidden; transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s ease; }
-        .nav-cta:hover { transform: translateY(-2px); box-shadow: var(--shadow-gold); }
+        .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:var(--nav-height) 4rem 6rem;overflow:hidden}
+        .hero-bg{position:absolute;inset:0;z-index:-1}
+        .hero-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(212,175,55,0.08),transparent 60%)}
+        .hero-bg::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(to top,var(--bg-void),transparent)}
+        .hero-particles{position:absolute;inset:0;overflow:hidden}
+        .particle{position:absolute;width:2px;height:2px;background:var(--gold-primary);border-radius:50%;animation:float 8s infinite}
+        @keyframes float{0%,100%{opacity:0;transform:translateY(100vh)}10%,90%{opacity:1}100%{transform:translateY(-100vh)}}
+        .hero-content{text-align:center;max-width:1000px;z-index:2}
+        .hero-badge{display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--font-mono);font-size:0.7rem;color:var(--gold-primary);background:var(--gold-glow);border:1px solid var(--border-gold);padding:0.5rem 1.5rem;letter-spacing:0.3em;text-transform:uppercase;margin-bottom:2rem;animation:fadeInUp 1s ease .5s both}
+        .hero-badge-dot{width:6px;height:6px;background:var(--gold-primary);border-radius:50%;animation:pulse 2s infinite}
+        @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+        .hero-title{font-family:var(--font-display);font-size:clamp(4rem,12vw,10rem);line-height:0.9;letter-spacing:0.05em;color:var(--text-white);margin-bottom:1.5rem;animation:fadeInUp 1s ease .7s both}
+        .hero-title span{display:block}
+        .hero-title .outline{-webkit-text-stroke:2px var(--gold-primary);color:transparent}
+        .hero-title .gold{background:var(--gradient-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .hero-subtitle{font-size:clamp(1.1rem,2vw,1.4rem);color:var(--text-secondary);max-width:600px;margin:0 auto 3rem;line-height:1.8;animation:fadeInUp 1s ease .9s both}
+        .hero-stats{display:flex;justify-content:center;gap:6rem;margin-bottom:3rem;animation:fadeInUp 1s ease 1.1s both}
+        .hero-stat{text-align:center}
+        .hero-stat-value{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);color:var(--gold-primary);line-height:1}
+        .hero-stat-label{font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);letter-spacing:0.2em;text-transform:uppercase;margin-top:0.5rem}
+        .hero-cta-group{display:flex;justify-content:center;gap:1.5rem;animation:fadeInUp 1s ease 1.3s both}
+        .btn{display:inline-flex;align-items:center;gap:1rem;font-family:var(--font-heading);font-size:0.9rem;padding:1.5rem 3rem;text-transform:uppercase;letter-spacing:0.15em;text-decoration:none;cursor:pointer;transition:all .4s}
+        .btn-primary{color:var(--bg-void);background:var(--gradient-gold);border:none}
+        .btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-gold)}
+        .btn-outline{color:var(--text-primary);background:transparent;border:1px solid var(--border-light)}
+        .btn-outline:hover{border-color:var(--gold-primary);color:var(--gold-primary)}
+        .hero-scroll{position:absolute;bottom:3rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:1rem;animation:fadeInUp 1s ease 1.5s both}
+        .hero-scroll-text{font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);letter-spacing:0.3em;text-transform:uppercase;writing-mode:vertical-rl}
+        .hero-scroll-line{width:1px;height:60px;background:linear-gradient(to bottom,var(--gold-primary),transparent);animation:scrollPulse 2s infinite}
+        @keyframes scrollPulse{0%,100%{transform:scaleY(1)}50%{transform:scaleY(0.5)}}
 
-        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: var(--nav-height) var(--space-3xl) var(--space-4xl); overflow: hidden; }
-        .hero-bg { position: absolute; inset: 0; z-index: -1; }
-        .hero-bg::before { content: ''; position: absolute; inset: 0; background: var(--gradient-hero); }
-        .hero-bg::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 40%; background: linear-gradient(to top, var(--bg-void), transparent); }
-        .hero-particles { position: absolute; inset: 0; overflow: hidden; }
-        .particle { position: absolute; width: 2px; height: 2px; background: var(--gold-primary); border-radius: 50%; opacity: 0; animation: particleFloat 8s infinite; }
-        @keyframes particleFloat { 0%, 100% { opacity: 0; transform: translateY(100vh) scale(0); } 10% { opacity: 1; } 90% { opacity: 1; } 100% { opacity: 0; transform: translateY(-100vh) scale(1); } }
-        .hero-content { position: relative; text-align: center; max-width: 1000px; z-index: 2; }
-        .hero-badge { display: inline-flex; align-items: center; gap: var(--space-sm); font-family: var(--font-mono); font-size: 0.7rem; color: var(--gold-primary); background: var(--gold-glow); border: 1px solid var(--border-gold); padding: var(--space-sm) var(--space-lg); letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: var(--space-xl); opacity: 0; animation: fadeInUp 1s var(--ease-out-expo) 2.5s forwards; }
-        .hero-badge-dot { width: 6px; height: 6px; background: var(--gold-primary); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
-        @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.2); } }
-        .hero-title { font-family: var(--font-display); font-size: clamp(4rem, 12vw, 10rem); line-height: 0.9; letter-spacing: 0.05em; color: var(--text-white); margin-bottom: var(--space-lg); opacity: 0; animation: heroTitleReveal 1.2s var(--ease-out-expo) 2.7s forwards; }
-        .hero-title span { display: block; }
-        .hero-title .outline { -webkit-text-stroke: 2px var(--gold-primary); color: transparent; }
-        .hero-title .gold { background: var(--gradient-gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        @keyframes heroTitleReveal { from { opacity: 0; transform: translateY(60px); filter: blur(10px); } to { opacity: 1; transform: translateY(0); filter: blur(0); } }
-        .hero-subtitle { font-family: var(--font-body); font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 300; color: var(--text-secondary); max-width: 600px; margin: 0 auto var(--space-3xl); line-height: 1.8; opacity: 0; animation: fadeInUp 1s var(--ease-out-expo) 3s forwards; }
-        .hero-stats { display: flex; justify-content: center; gap: var(--space-4xl); margin-bottom: var(--space-3xl); opacity: 0; animation: fadeInUp 1s var(--ease-out-expo) 3.2s forwards; }
-        .hero-stat { text-align: center; }
-        .hero-stat-value { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); color: var(--gold-primary); line-height: 1; }
-        .hero-stat-label { font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); letter-spacing: 0.2em; text-transform: uppercase; margin-top: var(--space-sm); }
-        .hero-cta-group { display: flex; justify-content: center; gap: var(--space-lg); opacity: 0; animation: fadeInUp 1s var(--ease-out-expo) 3.4s forwards; }
-        .btn { position: relative; display: inline-flex; align-items: center; gap: var(--space-md); font-family: var(--font-heading); font-size: 0.9rem; font-weight: 500; padding: var(--space-lg) var(--space-2xl); text-transform: uppercase; letter-spacing: 0.15em; text-decoration: none; cursor: pointer; overflow: hidden; transition: all 0.4s var(--ease-out-expo); }
-        .btn-primary { color: var(--bg-void); background: var(--gradient-gold); border: none; }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: var(--shadow-gold), var(--shadow-glow); }
-        .btn-outline { color: var(--text-primary); background: transparent; border: 1px solid var(--border-light); }
-        .btn-outline:hover { border-color: var(--gold-primary); color: var(--gold-primary); transform: translateY(-3px); }
-        .btn-icon { font-size: 1.2rem; transition: transform 0.3s var(--ease-out-expo); }
-        .btn:hover .btn-icon { transform: translateX(5px); }
-        .hero-scroll { position: absolute; bottom: var(--space-3xl); left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: var(--space-md); opacity: 0; animation: fadeIn 1s ease 3.8s forwards; }
-        .hero-scroll-text { font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); letter-spacing: 0.3em; text-transform: uppercase; writing-mode: vertical-rl; }
-        .hero-scroll-line { width: 1px; height: 60px; background: linear-gradient(to bottom, var(--gold-primary), transparent); animation: scrollPulse 2s ease-in-out infinite; }
-        @keyframes scrollPulse { 0%, 100% { transform: scaleY(1); opacity: 1; } 50% { transform: scaleY(0.5); opacity: 0.5; } }
+        .section{position:relative;padding:var(--section-padding) 4rem;overflow:hidden}
+        .section-header{text-align:center;margin-bottom:6rem}
+        .section-eyebrow{font-family:var(--font-mono);font-size:0.7rem;color:var(--gold-primary);letter-spacing:0.4em;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;justify-content:center;gap:1.5rem}
+        .section-eyebrow::before,.section-eyebrow::after{content:'';width:40px;height:1px;background:var(--gradient-gold)}
+        .section-title{font-family:var(--font-display);font-size:clamp(2.5rem,6vw,5rem);color:var(--text-white);letter-spacing:0.05em}
+        .section-title span{color:var(--gold-primary)}
+        .section-description{font-size:1.15rem;color:var(--text-secondary);max-width:600px;margin:2rem auto 0;line-height:1.8}
+        .container{max-width:var(--container-max);margin:0 auto}
 
-        .section { position: relative; padding: var(--section-padding) var(--space-3xl); overflow: hidden; }
-        .section-header { text-align: center; margin-bottom: var(--space-4xl); }
-        .section-eyebrow { font-family: var(--font-mono); font-size: 0.7rem; color: var(--gold-primary); letter-spacing: 0.4em; text-transform: uppercase; margin-bottom: var(--space-md); display: flex; align-items: center; justify-content: center; gap: var(--space-lg); }
-        .section-eyebrow::before, .section-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--gradient-gold); }
-        .section-title { font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 5rem); color: var(--text-white); letter-spacing: 0.05em; line-height: 1.1; }
-        .section-title span { color: var(--gold-primary); }
-        .section-description { font-family: var(--font-body); font-size: 1.15rem; color: var(--text-secondary); max-width: 600px; margin: var(--space-xl) auto 0; line-height: 1.8; }
-        .container { max-width: var(--container-max); margin: 0 auto; }
+        #history{background:var(--bg-deep)}
+        #history::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--border-gold),transparent)}
+        .timeline-container{position:relative;padding:4rem 0}
+        .timeline-line{position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,transparent,var(--gold-dark) 10%,var(--gold-primary) 50%,var(--gold-dark) 90%,transparent);transform:translateX(-50%)}
+        .timeline-item{position:relative;display:flex;align-items:center;margin-bottom:6rem;opacity:0;transform:translateY(50px);transition:all .8s}
+        .timeline-item.visible{opacity:1;transform:translateY(0)}
+        .timeline-item:nth-child(odd){flex-direction:row}
+        .timeline-item:nth-child(even){flex-direction:row-reverse}
+        .timeline-content{width:calc(50% - 60px);padding:3rem;background:var(--gradient-card);border:1px solid var(--border-subtle);border-radius:4px;cursor:pointer;transition:all .4s}
+        .timeline-content:hover{border-color:var(--border-gold);transform:translateY(-5px);box-shadow:var(--shadow-lg),var(--shadow-gold)}
+        .timeline-year{font-family:var(--font-display);font-size:3rem;color:var(--gold-primary);line-height:1;margin-bottom:0.5rem}
+        .timeline-location{font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:1rem}
+        .timeline-winner{font-family:var(--font-heading);font-size:1.4rem;color:var(--text-white);margin-bottom:0.5rem}
+        .timeline-score{font-size:1rem;color:var(--text-secondary)}
+        .timeline-node{position:absolute;left:50%;transform:translateX(-50%);width:20px;height:20px;background:var(--bg-primary);border:3px solid var(--gold-primary);border-radius:50%;z-index:2;transition:all .3s}
+        .timeline-item:hover .timeline-node{background:var(--gold-primary);box-shadow:var(--shadow-gold);transform:translateX(-50%) scale(1.3)}
 
-        #history { background: var(--bg-deep); }
-        #history::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--border-gold), transparent); }
-        .timeline-container { position: relative; padding: var(--space-3xl) 0; }
-        .timeline-line { position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, transparent, var(--gold-dark) 10%, var(--gold-primary) 50%, var(--gold-dark) 90%, transparent); transform: translateX(-50%); }
-        .timeline-item { position: relative; display: flex; align-items: center; margin-bottom: var(--space-4xl); opacity: 0; transform: translateY(50px); transition: all 0.8s var(--ease-out-expo); }
-        .timeline-item.visible { opacity: 1; transform: translateY(0); }
-        .timeline-item:nth-child(odd) { flex-direction: row; }
-        .timeline-item:nth-child(even) { flex-direction: row-reverse; }
-        .timeline-content { width: calc(50% - 60px); padding: var(--space-2xl); background: var(--gradient-card); border: 1px solid var(--border-subtle); border-radius: 4px; cursor: pointer; transition: all 0.4s var(--ease-out-expo); }
-        .timeline-content:hover { border-color: var(--border-gold); transform: translateY(-5px); box-shadow: var(--shadow-lg), var(--shadow-gold); }
-        .timeline-year { font-family: var(--font-display); font-size: 3rem; color: var(--gold-primary); line-height: 1; margin-bottom: var(--space-sm); }
-        .timeline-location { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: var(--space-md); }
-        .timeline-winner { font-family: var(--font-heading); font-size: 1.4rem; color: var(--text-white); margin-bottom: var(--space-sm); }
-        .timeline-score { font-family: var(--font-body); font-size: 1rem; color: var(--text-secondary); }
-        .timeline-node { position: absolute; left: 50%; transform: translateX(-50%); width: 20px; height: 20px; background: var(--bg-primary); border: 3px solid var(--gold-primary); border-radius: 50%; z-index: 2; transition: all 0.3s ease; }
-        .timeline-item:hover .timeline-node { background: var(--gold-primary); box-shadow: var(--shadow-gold); transform: translateX(-50%) scale(1.3); }
+        #stats{background:var(--bg-primary)}
+        .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+        .stat-card{padding:3rem;background:var(--gradient-card);border:1px solid var(--border-subtle);border-radius:4px;text-align:center;position:relative;overflow:hidden;transition:all .4s}
+        .stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gradient-gold);transform:scaleX(0);transition:transform .4s}
+        .stat-card:hover{transform:translateY(-10px);border-color:var(--border-gold)}
+        .stat-card:hover::before{transform:scaleX(1)}
+        .stat-icon{font-size:2.5rem;margin-bottom:1rem}
+        .stat-number{font-family:var(--font-display);font-size:3.5rem;color:var(--gold-primary);line-height:1;margin-bottom:0.5rem}
+        .stat-label{font-family:var(--font-heading);font-size:0.9rem;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.1em}
 
-        #stats { background: var(--bg-primary); }
-        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-xl); }
-        .stat-card { position: relative; padding: var(--space-2xl); background: var(--gradient-card); border: 1px solid var(--border-subtle); border-radius: 4px; text-align: center; overflow: hidden; transition: all 0.4s var(--ease-out-expo); }
-        .stat-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gradient-gold); transform: scaleX(0); transition: transform 0.4s var(--ease-out-expo); }
-        .stat-card:hover { transform: translateY(-10px); border-color: var(--border-gold); box-shadow: var(--shadow-lg); }
-        .stat-card:hover::before { transform: scaleX(1); }
-        .stat-icon { font-size: 2.5rem; margin-bottom: var(--space-md); opacity: 0.8; }
-        .stat-number { font-family: var(--font-display); font-size: 3.5rem; color: var(--gold-primary); line-height: 1; margin-bottom: var(--space-sm); }
-        .stat-number span { font-size: 1.5rem; color: var(--text-muted); }
-        .stat-label { font-family: var(--font-heading); font-size: 0.9rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; }
+        #quiz{background:var(--bg-deep)}
+        .quiz-container{max-width:900px;margin:0 auto}
+        .quiz-card{background:var(--gradient-card);border:1px solid var(--border-subtle);border-radius:8px;overflow:hidden}
+        .quiz-header{padding:3rem;background:rgba(212,175,55,0.05);border-bottom:1px solid var(--border-subtle);display:flex;align-items:center;justify-content:space-between}
+        .quiz-category{font-family:var(--font-mono);font-size:0.7rem;color:var(--gold-primary);letter-spacing:0.2em;text-transform:uppercase}
+        .quiz-progress{display:flex;align-items:center;gap:1rem}
+        .quiz-progress-bar{width:150px;height:4px;background:var(--bg-tertiary);border-radius:2px;overflow:hidden}
+        .quiz-progress-fill{height:100%;background:var(--gradient-gold);transition:width .5s}
+        .quiz-progress-text{font-family:var(--font-mono);font-size:0.75rem;color:var(--text-muted)}
+        .quiz-body{padding:4rem}
+        .quiz-question{font-family:var(--font-heading);font-size:1.8rem;color:var(--text-white);margin-bottom:3rem;line-height:1.4}
+        .quiz-options{display:grid;gap:1rem}
+        .quiz-option{padding:1.5rem 2rem;background:var(--bg-tertiary);border:1px solid var(--border-subtle);border-radius:4px;cursor:pointer;transition:all .3s;display:flex;align-items:center;gap:1rem}
+        .quiz-option:hover{border-color:var(--gold-primary);background:var(--gold-glow)}
+        .quiz-option.correct{border-color:var(--accent-emerald);background:rgba(16,185,129,0.15)}
+        .quiz-option.incorrect{border-color:var(--accent-ruby);background:rgba(239,68,68,0.15)}
+        .quiz-option-letter{width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:var(--bg-secondary);border:1px solid var(--border-light);border-radius:50%;font-family:var(--font-mono);font-size:0.8rem;color:var(--text-secondary);transition:all .3s}
+        .quiz-option:hover .quiz-option-letter{background:var(--gold-primary);color:var(--bg-void)}
+        .quiz-option-text{font-size:1.1rem;color:var(--text-primary)}
+        .quiz-footer{padding:3rem;border-top:1px solid var(--border-subtle);display:flex;justify-content:space-between;align-items:center}
+        .quiz-score{font-family:var(--font-mono);font-size:0.85rem;color:var(--text-muted)}
+        .quiz-score span{color:var(--gold-primary);font-weight:600}
 
-        #quiz { background: var(--bg-deep); }
-        .quiz-container { max-width: 900px; margin: 0 auto; }
-        .quiz-card { background: var(--gradient-card); border: 1px solid var(--border-subtle); border-radius: 8px; overflow: hidden; }
-        .quiz-header { padding: var(--space-2xl); background: rgba(212, 175, 55, 0.05); border-bottom: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between; }
-        .quiz-category { font-family: var(--font-mono); font-size: 0.7rem; color: var(--gold-primary); letter-spacing: 0.2em; text-transform: uppercase; }
-        .quiz-progress { display: flex; align-items: center; gap: var(--space-md); }
-        .quiz-progress-bar { width: 150px; height: 4px; background: var(--bg-tertiary); border-radius: 2px; overflow: hidden; }
-        .quiz-progress-fill { height: 100%; background: var(--gradient-gold); width: 5%; transition: width 0.5s var(--ease-out-expo); }
-        .quiz-progress-text { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); }
-        .quiz-body { padding: var(--space-3xl); }
-        .quiz-question { font-family: var(--font-heading); font-size: 1.8rem; color: var(--text-white); margin-bottom: var(--space-2xl); line-height: 1.4; }
-        .quiz-options { display: grid; gap: var(--space-md); }
-        .quiz-option { position: relative; padding: var(--space-lg) var(--space-xl); background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 4px; cursor: pointer; transition: all 0.3s var(--ease-out-expo); display: flex; align-items: center; gap: var(--space-md); }
-        .quiz-option:hover { border-color: var(--gold-primary); background: var(--gold-glow); }
-        .quiz-option.correct { border-color: var(--accent-emerald); background: rgba(16, 185, 129, 0.1); }
-        .quiz-option.incorrect { border-color: var(--accent-ruby); background: rgba(239, 68, 68, 0.1); }
-        .quiz-option-letter { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: var(--bg-secondary); border: 1px solid var(--border-light); border-radius: 50%; font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-secondary); transition: all 0.3s ease; }
-        .quiz-option:hover .quiz-option-letter { background: var(--gold-primary); border-color: var(--gold-primary); color: var(--bg-void); }
-        .quiz-option-text { font-family: var(--font-body); font-size: 1.1rem; color: var(--text-primary); }
-        .quiz-footer { padding: var(--space-2xl); border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; }
-        .quiz-score { font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); }
-        .quiz-score span { color: var(--gold-primary); font-weight: 600; }
+        .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.9);backdrop-filter:blur(10px);z-index:10000;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all .4s}
+        .modal-overlay.active{opacity:1;visibility:visible}
+        .modal{width:90%;max-width:700px;max-height:90vh;background:var(--gradient-card);border:1px solid var(--border-gold);border-radius:12px;overflow:hidden;transform:scale(0.9);transition:transform .4s;position:relative}
+        .modal-overlay.active .modal{transform:scale(1)}
+        .modal-close{position:absolute;top:1rem;right:1rem;width:40px;height:40px;background:var(--bg-tertiary);border:1px solid var(--border-subtle);border-radius:50%;color:var(--text-secondary);font-size:1.2rem;cursor:pointer;z-index:10;transition:all .3s;display:flex;align-items:center;justify-content:center}
+        .modal-close:hover{background:var(--gold-primary);color:var(--bg-void);transform:rotate(90deg)}
+        .modal-header{padding:4rem;background:linear-gradient(135deg,rgba(212,175,55,0.1),transparent 50%);border-bottom:1px solid var(--border-subtle);text-align:center}
+        .modal-year{font-family:var(--font-display);font-size:clamp(4rem,10vw,7rem);color:var(--gold-primary);line-height:1}
+        .modal-host{display:flex;align-items:center;justify-content:center;gap:0.5rem;font-family:var(--font-heading);font-size:1.2rem;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.2em;margin-top:1rem}
+        .modal-body{padding:3rem;max-height:60vh;overflow-y:auto}
+        .modal-label{font-family:var(--font-mono);font-size:0.65rem;color:var(--gold-primary);letter-spacing:0.25em;text-transform:uppercase;margin-bottom:0.5rem}
+        .modal-champion{text-align:center;margin-bottom:3rem;padding-bottom:3rem;border-bottom:1px solid var(--border-subtle)}
+        .modal-champion-name{font-family:var(--font-display);font-size:2.5rem;color:var(--text-white)}
+        .modal-final{text-align:center;margin-bottom:3rem}
+        .modal-final-score{font-family:var(--font-heading);font-size:1.5rem;color:var(--text-white)}
+        .modal-stadium{font-size:0.9rem;color:var(--text-muted);font-style:italic}
+        .modal-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:3rem;padding:2rem;background:var(--bg-tertiary);border-radius:8px}
+        .modal-stat{text-align:center}
+        .modal-stat-value{font-family:var(--font-display);font-size:1.8rem;color:var(--gold-primary)}
+        .modal-stat-label{font-family:var(--font-mono);font-size:0.6rem;color:var(--text-muted);text-transform:uppercase}
+        .modal-podium{margin-bottom:3rem}
+        .modal-podium-item{display:flex;align-items:center;gap:1rem;padding:1rem 1.5rem;background:var(--bg-tertiary);border-radius:6px;margin-bottom:0.5rem;border-left:3px solid var(--text-muted)}
+        .modal-podium-item.gold{border-color:var(--gold-primary);background:linear-gradient(90deg,rgba(212,175,55,0.1),transparent 50%)}
+        .modal-podium-item.silver{border-color:#c0c0c0}
+        .modal-podium-item.bronze{border-color:#cd7f32}
+        .podium-position{font-family:var(--font-display);font-size:1.2rem;width:40px}
+        .modal-podium-item.gold .podium-position{color:var(--gold-primary)}
+        .modal-topscorer{margin-bottom:3rem}
+        .modal-topscorer-info{display:flex;align-items:center;gap:1rem;padding:1rem 1.5rem;background:var(--bg-tertiary);border-radius:6px}
+        .topscorer-name{font-family:var(--font-heading);font-size:1.1rem;color:var(--text-white);flex:1}
+        .topscorer-goals{font-family:var(--font-mono);font-size:0.8rem;color:var(--gold-primary);background:var(--gold-glow);padding:0.25rem 1rem;border-radius:4px}
+        .modal-trivia{padding:1.5rem;background:linear-gradient(135deg,rgba(212,175,55,0.05),transparent);border:1px solid var(--border-gold);border-radius:8px}
+        .modal-trivia-text{font-size:1rem;color:var(--text-secondary);line-height:1.7;font-style:italic}
 
-        .modal-overlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.9); backdrop-filter: blur(10px); z-index: 10000; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all 0.4s var(--ease-out-expo); }
-        .modal-overlay.active { opacity: 1; visibility: visible; }
-        .modal { position: relative; width: 90%; max-width: 700px; max-height: 90vh; background: var(--gradient-card); border: 1px solid var(--border-gold); border-radius: 12px; overflow: hidden; transform: scale(0.9) translateY(20px); transition: transform 0.5s var(--ease-out-expo); }
-        .modal-overlay.active .modal { transform: scale(1) translateY(0); }
-        .modal-close { position: absolute; top: var(--space-lg); right: var(--space-lg); width: 40px; height: 40px; background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 50%; color: var(--text-secondary); font-size: 1rem; cursor: pointer; transition: all 0.3s ease; z-index: 10; }
-        .modal-close:hover { background: var(--gold-primary); border-color: var(--gold-primary); color: var(--bg-void); transform: rotate(90deg); }
-        .modal-header { padding: var(--space-3xl); background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, transparent 50%); border-bottom: 1px solid var(--border-subtle); text-align: center; }
-        .modal-year { font-family: var(--font-display); font-size: clamp(4rem, 10vw, 7rem); color: var(--gold-primary); line-height: 1; text-shadow: 0 0 60px rgba(212, 175, 55, 0.3); }
-        .modal-host { display: flex; align-items: center; justify-content: center; gap: var(--space-sm); font-family: var(--font-heading); font-size: 1.2rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.2em; margin-top: var(--space-md); }
-        .modal-flag { font-size: 1.5rem; }
-        .modal-body { padding: var(--space-2xl); max-height: 60vh; overflow-y: auto; }
-        .modal-body::-webkit-scrollbar { width: 6px; }
-        .modal-body::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 3px; }
-        .modal-label { font-family: var(--font-mono); font-size: 0.65rem; color: var(--gold-primary); letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: var(--space-sm); }
-        .modal-champion { text-align: center; margin-bottom: var(--space-2xl); padding-bottom: var(--space-2xl); border-bottom: 1px solid var(--border-subtle); }
-        .modal-champion-name { display: flex; align-items: center; justify-content: center; gap: var(--space-md); font-family: var(--font-display); font-size: 2.5rem; color: var(--text-white); }
-        .modal-champion-flag { font-size: 2rem; }
-        .modal-final { text-align: center; margin-bottom: var(--space-2xl); }
-        .modal-final-score { font-family: var(--font-heading); font-size: 1.5rem; color: var(--text-white); margin-bottom: var(--space-xs); }
-        .modal-stadium { font-family: var(--font-body); font-size: 0.9rem; color: var(--text-muted); font-style: italic; }
-        .modal-stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-md); margin-bottom: var(--space-2xl); padding: var(--space-xl); background: var(--bg-tertiary); border-radius: 8px; }
-        .modal-stat { text-align: center; }
-        .modal-stat-value { font-family: var(--font-display); font-size: 1.8rem; color: var(--gold-primary); }
-        .modal-stat-label { font-family: var(--font-mono); font-size: 0.6rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; }
-        .modal-podium { margin-bottom: var(--space-2xl); }
-        .modal-podium-list { display: flex; flex-direction: column; gap: var(--space-sm); }
-        .modal-podium-item { display: flex; align-items: center; gap: var(--space-md); padding: var(--space-md) var(--space-lg); background: var(--bg-tertiary); border-radius: 6px; border-left: 3px solid; font-family: var(--font-body); color: var(--text-primary); }
-        .modal-podium-item.gold { border-color: var(--gold-primary); background: linear-gradient(90deg, rgba(212, 175, 55, 0.1) 0%, transparent 50%); }
-        .modal-podium-item.silver { border-color: #c0c0c0; }
-        .modal-podium-item.bronze { border-color: #cd7f32; }
-        .podium-position { font-family: var(--font-display); font-size: 1.2rem; color: var(--text-muted); width: 30px; }
-        .modal-podium-item.gold .podium-position { color: var(--gold-primary); }
-        .podium-flag { font-size: 1.3rem; }
-        .modal-topscorer { margin-bottom: var(--space-2xl); }
-        .modal-topscorer-info { display: flex; align-items: center; gap: var(--space-md); padding: var(--space-md) var(--space-lg); background: var(--bg-tertiary); border-radius: 6px; }
-        .topscorer-flag { font-size: 1.3rem; }
-        .topscorer-name { font-family: var(--font-heading); font-size: 1.1rem; color: var(--text-white); flex: 1; }
-        .topscorer-goals { font-family: var(--font-mono); font-size: 0.8rem; color: var(--gold-primary); background: var(--gold-glow); padding: var(--space-xs) var(--space-md); border-radius: 4px; }
-        .modal-trivia { padding: var(--space-lg); background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, transparent 100%); border: 1px solid var(--border-gold); border-radius: 8px; }
-        .modal-trivia-text { font-family: var(--font-body); font-size: 1rem; color: var(--text-secondary); line-height: 1.7; font-style: italic; }
+        .footer{background:var(--bg-void);padding:6rem 4rem 3rem;border-top:1px solid var(--border-subtle)}
+        .footer-content{max-width:var(--container-max);margin:0 auto}
+        .footer-top{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:4rem;border-bottom:1px solid var(--border-subtle)}
+        .footer-brand{max-width:300px}
+        .footer-logo{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem}
+        .footer-logo-icon{width:40px;height:40px;background:var(--gradient-gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem}
+        .footer-logo-text{font-family:var(--font-display);font-size:1.3rem;color:var(--text-white);letter-spacing:0.1em}
+        .footer-description{font-size:0.95rem;color:var(--text-muted);line-height:1.7}
+        .footer-links{display:flex;gap:6rem}
+        .footer-column h4{font-family:var(--font-heading);font-size:0.85rem;color:var(--text-white);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:1.5rem}
+        .footer-column ul{list-style:none}
+        .footer-column li{margin-bottom:0.5rem}
+        .footer-column a{font-size:0.95rem;color:var(--text-muted);text-decoration:none;transition:color .3s}
+        .footer-column a:hover{color:var(--gold-primary)}
+        .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:3rem}
+        .footer-copyright{font-family:var(--font-mono);font-size:0.7rem;color:var(--text-subtle)}
+        .footer-social{display:flex;gap:1rem}
+        .footer-social-link{width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:var(--bg-secondary);border:1px solid var(--border-subtle);border-radius:50%;color:var(--text-muted);text-decoration:none;transition:all .3s}
+        .footer-social-link:hover{background:var(--gold-glow);border-color:var(--gold-primary);color:var(--gold-primary)}
 
-        .footer { background: var(--bg-void); padding: var(--space-4xl) var(--space-3xl) var(--space-2xl); border-top: 1px solid var(--border-subtle); }
-        .footer-content { max-width: var(--container-max); margin: 0 auto; }
-        .footer-top { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: var(--space-3xl); border-bottom: 1px solid var(--border-subtle); }
-        .footer-brand { max-width: 300px; }
-        .footer-logo { display: flex; align-items: center; gap: var(--space-md); margin-bottom: var(--space-lg); }
-        .footer-logo-icon { width: 40px; height: 40px; background: var(--gradient-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; color: var(--bg-void); }
-        .footer-logo-text { font-family: var(--font-display); font-size: 1.3rem; color: var(--text-white); letter-spacing: 0.1em; }
-        .footer-description { font-family: var(--font-body); font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; }
-        .footer-links { display: flex; gap: var(--space-4xl); }
-        .footer-column h4 { font-family: var(--font-heading); font-size: 0.85rem; color: var(--text-white); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: var(--space-lg); }
-        .footer-column ul { list-style: none; }
-        .footer-column li { margin-bottom: var(--space-sm); }
-        .footer-column a { font-family: var(--font-body); font-size: 0.95rem; color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; }
-        .footer-column a:hover { color: var(--gold-primary); }
-        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: var(--space-2xl); }
-        .footer-copyright { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-subtle); letter-spacing: 0.1em; }
-        .footer-social { display: flex; gap: var(--space-md); }
-        .footer-social-link { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: 50%; color: var(--text-muted); font-size: 1rem; text-decoration: none; transition: all 0.3s ease; }
-        .footer-social-link:hover { background: var(--gold-glow); border-color: var(--gold-primary); color: var(--gold-primary); transform: translateY(-3px); }
+        .fade-in{opacity:0;transform:translateY(30px);transition:all .8s}
+        .fade-in.visible{opacity:1;transform:translateY(0)}
 
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s var(--ease-out-expo); }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        @media(max-width:768px){.stats-grid{grid-template-columns:repeat(2,1fr)}.hero-stats{flex-wrap:wrap;gap:2rem}.timeline-item{flex-direction:column!important}.timeline-content{width:100%;margin-left:40px}.timeline-line{left:20px}.timeline-node{left:20px}.nav-menu{display:none}.modal-stats-grid{grid-template-columns:repeat(2,1fr)}.footer-top{flex-direction:column;gap:3rem}.footer-links{flex-wrap:wrap;gap:3rem}}
     </style>
 </head>
 <body>
@@ -273,37 +204,23 @@
         <div class="preloader-bar"><div class="preloader-progress"></div></div>
         <div class="preloader-text">Loading football history</div>
     </div>
-
     <div class="cursor" id="cursor"></div>
-    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
     <div class="bg-noise"></div>
     <div class="bg-grid"></div>
-    <div class="bg-glow" id="bg-glow"></div>
+    <div class="bg-glow" id="bgGlow"></div>
 
     <nav class="nav" id="nav">
-        <a href="#" class="nav-logo">
-            <div class="nav-logo-icon">⚽</div>
-            <div class="nav-logo-text">WORLD <span>CUP</span></div>
-        </a>
-        <ul class="nav-menu">
-            <li><a href="#history" class="nav-link active">History</a></li>
-            <li><a href="#stats" class="nav-link">Statistics</a></li>
-            <li><a href="#quiz" class="nav-link">Quiz</a></li>
-        </ul>
+        <a href="#" class="nav-logo"><div class="nav-logo-icon">&#9917;</div><div class="nav-logo-text">WORLD <span>CUP</span></div></a>
+        <ul class="nav-menu"><li><a href="#history" class="nav-link active">History</a></li><li><a href="#stats" class="nav-link">Statistics</a></li><li><a href="#quiz" class="nav-link">Quiz</a></li></ul>
         <button class="nav-cta">Explore</button>
     </nav>
 
     <section class="hero" id="hero">
         <div class="hero-bg"><div class="hero-particles" id="particles"></div></div>
         <div class="hero-content">
-            <div class="hero-badge">
-                <span class="hero-badge-dot"></span>
-                <span>92 Years of Glory</span>
-            </div>
-            <h1 class="hero-title">
-                <span class="outline">FIFA WORLD</span>
-                <span class="gold">CUP LEGACY</span>
-            </h1>
+            <div class="hero-badge"><span class="hero-badge-dot"></span><span>92 Years of Glory</span></div>
+            <h1 class="hero-title"><span class="outline">FIFA WORLD</span><span class="gold">CUP LEGACY</span></h1>
             <p class="hero-subtitle">An epic journey through the history of the most prestigious football tournament. From Uruguay 1930 to Qatar 2022.</p>
             <div class="hero-stats">
                 <div class="hero-stat"><div class="hero-stat-value">22</div><div class="hero-stat-label">World Cups</div></div>
@@ -312,14 +229,11 @@
                 <div class="hero-stat"><div class="hero-stat-value">79</div><div class="hero-stat-label">Nations</div></div>
             </div>
             <div class="hero-cta-group">
-                <a href="#history" class="btn btn-primary">Start Journey <span class="btn-icon">→</span></a>
+                <a href="#history" class="btn btn-primary">Start Journey &#8594;</a>
                 <a href="#quiz" class="btn btn-outline">Take the Quiz</a>
             </div>
         </div>
-        <div class="hero-scroll">
-            <span class="hero-scroll-text">Scroll</span>
-            <div class="hero-scroll-line"></div>
-        </div>
+        <div class="hero-scroll"><span class="hero-scroll-text">Scroll</span><div class="hero-scroll-line"></div></div>
     </section>
 
     <section class="section" id="history">
@@ -331,28 +245,28 @@
         <div class="container">
             <div class="timeline-container">
                 <div class="timeline-line"></div>
-                <div class="timeline-item fade-in" data-mundial="1930"><div class="timeline-content"><div class="timeline-year">1930</div><div class="timeline-location">🇺🇾 Uruguay</div><div class="timeline-winner">🏆 Uruguay</div><div class="timeline-score">Final: Uruguay 4 - 2 Argentina</div></div><div class="timeline-node"></div></div>
-                <div class="timeline-item fade-in" data-mundial="1934"><div class="timeline-content"><div class="timeline-year">1934</div><div class="timeline-location">🇮🇹 Italy</div><div class="timeline-winner">🏆 Italy</div><div class="timeline-score">Final: Italy 2 - 1 Czechoslovakia</div></div><div class="timeline-node"></div></div>
-                <div class="timeline-item fade-in" data-mundial="1938"><div class="timeline-content"><div class="timeline-year">1938</div><div class="timeline-location">🇫🇷 France</div><div class="timeline-winner">🏆 Italy</div><div class="timeline-score">Final: Italy 4 - 2 Hungary</div></div><div class="timeline-node"></div></div>
-                <div class="timeline-item fade-in" data-mundial="1950"><div class="timeline-content"><div class="timeline-year">1950</div><div class="timeline-location">🇧🇷 Brazil</div><div class="timeline-winner">🏆 Uruguay</div><div class="timeline-score">Final: Uruguay 2 - 1 Brazil</div></div><div class="timeline-node"></div></div>
-                <div class="timeline-item fade-in" data-mundial="1954"><div class="timeline-content"><div class="timeline-year">1954</div><div class="timeline-location">🇨🇭 Switzerland</div><div class="timeline-winner">🏆 Germany</div><div class="timeline-score">Final: Germany 3 - 2 Hungary</div></div><div class="timeline-node"></div></div>
-                <div class="timeline-item fade-in" data-mundial="1958"><div class="timeline-content"><div class="timeline-year">1958</div><div class="timeline-location">🇸🇪 Sweden</div><div class="timeline-winner">🏆 Brazil</div><div class="timeline-score">Final: Brazil 5 - 2 Sweden</div></div><div class="timeline-node"></div></div>
-                <div class="timeline-item fade-in" data-mundial="1962"><div class="timeline-content"><div class="timeline-year">1962</div><div class="timeline-location">🇨🇱 Chile</div><div class="timeline-winner">🏆 Brazil</div><div class="timeline-score">Final: Brazil 3 - 1 Czechoslovakia</div></div><div class="timeline-node"></div></div>
-                <div class="timeline-item fade-in" data-mundial="1966"><div class="timeline-content"><div class="timeline-year">1966</div><div class="timeline-location">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England</div><div class="timeline-winner">🏆 England</div><div class="timeline-score">Final: England 4 - 2 Germany</div></div><div class="timeline-node"></div></div>
-                <div class="timeline-item fade-in" data-mundial="1970"><div class="timeline-content"><div class="timeline-year">1970</div><div class="timeline-location">🇲🇽 Mexico</div><div class="timeline-winner">🏆 Brazil</div><div class="timeline-score">Final: Brazil 4 - 1 Italy</div></div><div class="timeline-node"></div></div>
-                <div class="timeline-item fade-in" data-mundial="1974"><div class="timeline-content"><div class="timeline-year">1974</div><div class="timeline-location">🇩🇪 Germany</div><div class="timeline-winner">🏆 Germany</div><div class="timeline-score">Final: Germany 2 - 1 Netherlands</div></div><div class="timeline-node"></div></div>
-                <div class="timeline-item fade-in" data-mundial="1978"><div class="timeline-content"><div class="timeline-year">1978</div><div class="timeline-location">🇦🇷 Argentina</div><div class="timeline-winner">🏆 Argentina</div><div class="timeline-score">Final: Argentina 3 - 1 Netherlands</div></div><div class="timeline-node"></div></div>
-                <div class="timeline-item fade-in" data-mundial="1982"><div class="timeline-content"><div class="timeline-year">1982</div><div class="timeline-location">🇪🇸 Spain</div><div class="timeline-winner">🏆 Italy</div><div class="timeline-score">Final: Italy 3 - 1 Germany</div></div><div class="timeline-node"></div></div>
-                <div class="timeline-item fade-in" data-mundial="1986"><div class="timeline-content"><div class="timeline-year">1986</div><div class="timeline-location">🇲🇽 Mexico</div><div class="timeline-winner">🏆 Argentina</div><div class="timeline-score">Final: Argentina 3 - 2 Germany</div></div><div class="timeline-node"></div></div>
-                <div class="timeline-item fade-in" data-mundial="1990"><div class="timeline-content"><div class="timeline-year">1990</div><div class="timeline-location">🇮🇹 Italy</div><div class="timeline-winner">🏆 Germany</div><div class="timeline-score">Final: Germany 1 - 0 Argentina</div></div><div class="timeline-node"></div></div>
-                <div class="timeline-item fade-in" data-mundial="1994"><div class="timeline-content"><div class="timeline-year">1994</div><div class="timeline-location">🇺🇸 United States</div><div class="timeline-winner">🏆 Brazil</div><div class="timeline-score">Final: Brazil 0(3) - 0(2) Italy</div></div><div class="timeline-node"></div></div>
-                <div class="timeline-item fade-in" data-mundial="1998"><div class="timeline-content"><div class="timeline-year">1998</div><div class="timeline-location">🇫🇷 France</div><div class="timeline-winner">🏆 France</div><div class="timeline-score">Final: France 3 - 0 Brazil</div></div><div class="timeline-node"></div></div>
-                <div class="timeline-item fade-in" data-mundial="2002"><div class="timeline-content"><div class="timeline-year">2002</div><div class="timeline-location">🇰🇷🇯🇵 Korea/Japan</div><div class="timeline-winner">🏆 Brazil</div><div class="timeline-score">Final: Brazil 2 - 0 Germany</div></div><div class="timeline-node"></div></div>
-                <div class="timeline-item fade-in" data-mundial="2006"><div class="timeline-content"><div class="timeline-year">2006</div><div class="timeline-location">🇩🇪 Germany</div><div class="timeline-winner">🏆 Italy</div><div class="timeline-score">Final: Italy 1(5) - 1(3) France</div></div><div class="timeline-node"></div></div>
-                <div class="timeline-item fade-in" data-mundial="2010"><div class="timeline-content"><div class="timeline-year">2010</div><div class="timeline-location">🇿🇦 South Africa</div><div class="timeline-winner">🏆 Spain</div><div class="timeline-score">Final: Spain 1 - 0 Netherlands</div></div><div class="timeline-node"></div></div>
-                <div class="timeline-item fade-in" data-mundial="2014"><div class="timeline-content"><div class="timeline-year">2014</div><div class="timeline-location">🇧🇷 Brazil</div><div class="timeline-winner">🏆 Germany</div><div class="timeline-score">Final: Germany 1 - 0 Argentina</div></div><div class="timeline-node"></div></div>
-                <div class="timeline-item fade-in" data-mundial="2018"><div class="timeline-content"><div class="timeline-year">2018</div><div class="timeline-location">🇷🇺 Russia</div><div class="timeline-winner">🏆 France</div><div class="timeline-score">Final: France 4 - 2 Croatia</div></div><div class="timeline-node"></div></div>
-                <div class="timeline-item fade-in" data-mundial="2022"><div class="timeline-content"><div class="timeline-year">2022</div><div class="timeline-location">🇶🇦 Qatar</div><div class="timeline-winner">🏆 Argentina</div><div class="timeline-score">Final: Argentina 3(4) - 3(2) France</div></div><div class="timeline-node"></div></div>
+                <div class="timeline-item fade-in" data-year="1930"><div class="timeline-content"><div class="timeline-year">1930</div><div class="timeline-location">&#127482;&#127486; Uruguay</div><div class="timeline-winner">&#127942; Uruguay</div><div class="timeline-score">Final: Uruguay 4-2 Argentina</div></div><div class="timeline-node"></div></div>
+                <div class="timeline-item fade-in" data-year="1934"><div class="timeline-content"><div class="timeline-year">1934</div><div class="timeline-location">&#127470;&#127481; Italy</div><div class="timeline-winner">&#127942; Italy</div><div class="timeline-score">Final: Italy 2-1 Czechoslovakia</div></div><div class="timeline-node"></div></div>
+                <div class="timeline-item fade-in" data-year="1938"><div class="timeline-content"><div class="timeline-year">1938</div><div class="timeline-location">&#127467;&#127479; France</div><div class="timeline-winner">&#127942; Italy</div><div class="timeline-score">Final: Italy 4-2 Hungary</div></div><div class="timeline-node"></div></div>
+                <div class="timeline-item fade-in" data-year="1950"><div class="timeline-content"><div class="timeline-year">1950</div><div class="timeline-location">&#127463;&#127479; Brazil</div><div class="timeline-winner">&#127942; Uruguay</div><div class="timeline-score">Final: Uruguay 2-1 Brazil</div></div><div class="timeline-node"></div></div>
+                <div class="timeline-item fade-in" data-year="1954"><div class="timeline-content"><div class="timeline-year">1954</div><div class="timeline-location">&#127464;&#127469; Switzerland</div><div class="timeline-winner">&#127942; Germany</div><div class="timeline-score">Final: Germany 3-2 Hungary</div></div><div class="timeline-node"></div></div>
+                <div class="timeline-item fade-in" data-year="1958"><div class="timeline-content"><div class="timeline-year">1958</div><div class="timeline-location">&#127480;&#127466; Sweden</div><div class="timeline-winner">&#127942; Brazil</div><div class="timeline-score">Final: Brazil 5-2 Sweden</div></div><div class="timeline-node"></div></div>
+                <div class="timeline-item fade-in" data-year="1962"><div class="timeline-content"><div class="timeline-year">1962</div><div class="timeline-location">&#127464;&#127473; Chile</div><div class="timeline-winner">&#127942; Brazil</div><div class="timeline-score">Final: Brazil 3-1 Czechoslovakia</div></div><div class="timeline-node"></div></div>
+                <div class="timeline-item fade-in" data-year="1966"><div class="timeline-content"><div class="timeline-year">1966</div><div class="timeline-location">&#127468;&#127463; England</div><div class="timeline-winner">&#127942; England</div><div class="timeline-score">Final: England 4-2 Germany</div></div><div class="timeline-node"></div></div>
+                <div class="timeline-item fade-in" data-year="1970"><div class="timeline-content"><div class="timeline-year">1970</div><div class="timeline-location">&#127474;&#127485; Mexico</div><div class="timeline-winner">&#127942; Brazil</div><div class="timeline-score">Final: Brazil 4-1 Italy</div></div><div class="timeline-node"></div></div>
+                <div class="timeline-item fade-in" data-year="1974"><div class="timeline-content"><div class="timeline-year">1974</div><div class="timeline-location">&#127465;&#127466; Germany</div><div class="timeline-winner">&#127942; Germany</div><div class="timeline-score">Final: Germany 2-1 Netherlands</div></div><div class="timeline-node"></div></div>
+                <div class="timeline-item fade-in" data-year="1978"><div class="timeline-content"><div class="timeline-year">1978</div><div class="timeline-location">&#127462;&#127479; Argentina</div><div class="timeline-winner">&#127942; Argentina</div><div class="timeline-score">Final: Argentina 3-1 Netherlands</div></div><div class="timeline-node"></div></div>
+                <div class="timeline-item fade-in" data-year="1982"><div class="timeline-content"><div class="timeline-year">1982</div><div class="timeline-location">&#127466;&#127480; Spain</div><div class="timeline-winner">&#127942; Italy</div><div class="timeline-score">Final: Italy 3-1 Germany</div></div><div class="timeline-node"></div></div>
+                <div class="timeline-item fade-in" data-year="1986"><div class="timeline-content"><div class="timeline-year">1986</div><div class="timeline-location">&#127474;&#127485; Mexico</div><div class="timeline-winner">&#127942; Argentina</div><div class="timeline-score">Final: Argentina 3-2 Germany</div></div><div class="timeline-node"></div></div>
+                <div class="timeline-item fade-in" data-year="1990"><div class="timeline-content"><div class="timeline-year">1990</div><div class="timeline-location">&#127470;&#127481; Italy</div><div class="timeline-winner">&#127942; Germany</div><div class="timeline-score">Final: Germany 1-0 Argentina</div></div><div class="timeline-node"></div></div>
+                <div class="timeline-item fade-in" data-year="1994"><div class="timeline-content"><div class="timeline-year">1994</div><div class="timeline-location">&#127482;&#127480; USA</div><div class="timeline-winner">&#127942; Brazil</div><div class="timeline-score">Final: Brazil 0(3)-0(2) Italy</div></div><div class="timeline-node"></div></div>
+                <div class="timeline-item fade-in" data-year="1998"><div class="timeline-content"><div class="timeline-year">1998</div><div class="timeline-location">&#127467;&#127479; France</div><div class="timeline-winner">&#127942; France</div><div class="timeline-score">Final: France 3-0 Brazil</div></div><div class="timeline-node"></div></div>
+                <div class="timeline-item fade-in" data-year="2002"><div class="timeline-content"><div class="timeline-year">2002</div><div class="timeline-location">&#127472;&#127479;&#127471;&#127477; Korea/Japan</div><div class="timeline-winner">&#127942; Brazil</div><div class="timeline-score">Final: Brazil 2-0 Germany</div></div><div class="timeline-node"></div></div>
+                <div class="timeline-item fade-in" data-year="2006"><div class="timeline-content"><div class="timeline-year">2006</div><div class="timeline-location">&#127465;&#127466; Germany</div><div class="timeline-winner">&#127942; Italy</div><div class="timeline-score">Final: Italy 1(5)-1(3) France</div></div><div class="timeline-node"></div></div>
+                <div class="timeline-item fade-in" data-year="2010"><div class="timeline-content"><div class="timeline-year">2010</div><div class="timeline-location">&#127487;&#127462; South Africa</div><div class="timeline-winner">&#127942; Spain</div><div class="timeline-score">Final: Spain 1-0 Netherlands</div></div><div class="timeline-node"></div></div>
+                <div class="timeline-item fade-in" data-year="2014"><div class="timeline-content"><div class="timeline-year">2014</div><div class="timeline-location">&#127463;&#127479; Brazil</div><div class="timeline-winner">&#127942; Germany</div><div class="timeline-score">Final: Germany 1-0 Argentina</div></div><div class="timeline-node"></div></div>
+                <div class="timeline-item fade-in" data-year="2018"><div class="timeline-content"><div class="timeline-year">2018</div><div class="timeline-location">&#127479;&#127482; Russia</div><div class="timeline-winner">&#127942; France</div><div class="timeline-score">Final: France 4-2 Croatia</div></div><div class="timeline-node"></div></div>
+                <div class="timeline-item fade-in" data-year="2022"><div class="timeline-content"><div class="timeline-year">2022</div><div class="timeline-location">&#127478;&#127462; Qatar</div><div class="timeline-winner">&#127942; Argentina</div><div class="timeline-score">Final: Argentina 3(4)-3(2) France</div></div><div class="timeline-node"></div></div>
             </div>
         </div>
     </section>
@@ -365,10 +279,10 @@
         </div>
         <div class="container">
             <div class="stats-grid">
-                <div class="stat-card fade-in"><div class="stat-icon">🏆</div><div class="stat-number">5</div><div class="stat-label">Brazil Titles</div></div>
-                <div class="stat-card fade-in"><div class="stat-icon">⚽</div><div class="stat-number">16</div><div class="stat-label">Klose Goals</div></div>
-                <div class="stat-card fade-in"><div class="stat-icon">🎮</div><div class="stat-number">900<span>+</span></div><div class="stat-label">Matches Played</div></div>
-                <div class="stat-card fade-in"><div class="stat-icon">🌍</div><div class="stat-number">17</div><div class="stat-label">Host Countries</div></div>
+                <div class="stat-card fade-in"><div class="stat-icon">&#127942;</div><div class="stat-number">5</div><div class="stat-label">Brazil Titles</div></div>
+                <div class="stat-card fade-in"><div class="stat-icon">&#9917;</div><div class="stat-number">16</div><div class="stat-label">Klose Goals</div></div>
+                <div class="stat-card fade-in"><div class="stat-icon">&#127918;</div><div class="stat-number">900+</div><div class="stat-label">Matches Played</div></div>
+                <div class="stat-card fade-in"><div class="stat-icon">&#127758;</div><div class="stat-number">17</div><div class="stat-label">Host Countries</div></div>
             </div>
         </div>
     </section>
@@ -377,77 +291,50 @@
         <div class="section-header">
             <div class="section-eyebrow">Test Yourself</div>
             <h2 class="section-title">World Cup <span>Quiz</span></h2>
-            <p class="section-description">How much do you know about World Cup history? Prove your knowledge.</p>
+            <p class="section-description">How much do you know about World Cup history?</p>
         </div>
         <div class="quiz-container">
             <div class="quiz-card fade-in">
                 <div class="quiz-header">
-                    <div class="quiz-category">General History</div>
-                    <div class="quiz-progress">
-                        <div class="quiz-progress-bar"><div class="quiz-progress-fill"></div></div>
-                        <span class="quiz-progress-text">1/20</span>
-                    </div>
+                    <div class="quiz-category" id="quizCat">General History</div>
+                    <div class="quiz-progress"><div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quizProgress"></div></div><span class="quiz-progress-text" id="quizProgressText">1/20</span></div>
                 </div>
-                <div class="quiz-body">
-                    <h3 class="quiz-question">Which was the first country to win two consecutive World Cups?</h3>
-                    <div class="quiz-options">
-                        <div class="quiz-option"><span class="quiz-option-letter">A</span><span class="quiz-option-text">Brazil</span></div>
-                        <div class="quiz-option"><span class="quiz-option-letter">B</span><span class="quiz-option-text">Italy</span></div>
-                        <div class="quiz-option"><span class="quiz-option-letter">C</span><span class="quiz-option-text">Argentina</span></div>
-                        <div class="quiz-option"><span class="quiz-option-letter">D</span><span class="quiz-option-text">Germany</span></div>
-                    </div>
+                <div class="quiz-body" id="quizBody">
+                    <h3 class="quiz-question" id="quizQ">Loading...</h3>
+                    <div class="quiz-options" id="quizOpts"></div>
                 </div>
-                <div class="quiz-footer">
-                    <div class="quiz-score">Score: <span>0</span> pts</div>
-                    <button class="btn btn-primary quiz-next-btn">Next <span class="btn-icon">→</span></button>
+                <div class="quiz-footer" id="quizFooter">
+                    <div class="quiz-score">Score: <span id="quizScore">0</span> pts</div>
+                    <button class="btn btn-primary" id="quizNext">Next &#8594;</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="modal-overlay" id="modal-overlay">
-        <div class="modal" id="modal">
-            <button class="modal-close" id="modal-close">✕</button>
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <button class="modal-close" id="modalClose">&#10005;</button>
             <div class="modal-header">
-                <div class="modal-year" id="modal-year">1930</div>
-                <div class="modal-host"><span class="modal-flag" id="modal-flag">🇺🇾</span><span id="modal-country">Uruguay</span></div>
+                <div class="modal-year" id="modalYear">1930</div>
+                <div class="modal-host"><span id="modalFlag"></span> <span id="modalCountry">Uruguay</span></div>
             </div>
             <div class="modal-body">
-                <div class="modal-champion">
-                    <div class="modal-label">Champion</div>
-                    <div class="modal-champion-name"><span class="modal-champion-flag" id="modal-champion-flag">🇺🇾</span><span id="modal-champion-country">Uruguay</span></div>
-                </div>
-                <div class="modal-final">
-                    <div class="modal-label">Final</div>
-                    <div class="modal-final-score" id="modal-final">Uruguay 4 - 2 Argentina</div>
-                    <div class="modal-stadium" id="modal-stadium">Estadio Centenario, Montevideo</div>
-                </div>
+                <div class="modal-champion"><div class="modal-label">Champion</div><div class="modal-champion-name"><span id="modalChampFlag"></span> <span id="modalChamp">Uruguay</span></div></div>
+                <div class="modal-final"><div class="modal-label">Final</div><div class="modal-final-score" id="modalFinal">Uruguay 4-2 Argentina</div><div class="modal-stadium" id="modalStadium">Estadio Centenario</div></div>
                 <div class="modal-stats-grid">
-                    <div class="modal-stat"><div class="modal-stat-value" id="modal-teams">13</div><div class="modal-stat-label">Teams</div></div>
-                    <div class="modal-stat"><div class="modal-stat-value" id="modal-matches">18</div><div class="modal-stat-label">Matches</div></div>
-                    <div class="modal-stat"><div class="modal-stat-value" id="modal-goals">70</div><div class="modal-stat-label">Goals</div></div>
-                    <div class="modal-stat"><div class="modal-stat-value" id="modal-attendance">590K</div><div class="modal-stat-label">Attendance</div></div>
+                    <div class="modal-stat"><div class="modal-stat-value" id="modalTeams">13</div><div class="modal-stat-label">Teams</div></div>
+                    <div class="modal-stat"><div class="modal-stat-value" id="modalMatches">18</div><div class="modal-stat-label">Matches</div></div>
+                    <div class="modal-stat"><div class="modal-stat-value" id="modalGoals">70</div><div class="modal-stat-label">Goals</div></div>
+                    <div class="modal-stat"><div class="modal-stat-value" id="modalAtt">590K</div><div class="modal-stat-label">Attendance</div></div>
                 </div>
                 <div class="modal-podium">
                     <div class="modal-label">Podium</div>
-                    <div class="modal-podium-list">
-                        <div class="modal-podium-item gold"><span class="podium-position">1st</span><span class="podium-flag" id="modal-first-flag">🇺🇾</span><span id="modal-first">Uruguay</span></div>
-                        <div class="modal-podium-item silver"><span class="podium-position">2nd</span><span class="podium-flag" id="modal-second-flag">🇦🇷</span><span id="modal-second">Argentina</span></div>
-                        <div class="modal-podium-item bronze"><span class="podium-position">3rd</span><span class="podium-flag" id="modal-third-flag">🇺🇸</span><span id="modal-third">United States</span></div>
-                    </div>
+                    <div class="modal-podium-item gold"><span class="podium-position">1st</span><span id="modal1Flag"></span> <span id="modal1">Uruguay</span></div>
+                    <div class="modal-podium-item silver"><span class="podium-position">2nd</span><span id="modal2Flag"></span> <span id="modal2">Argentina</span></div>
+                    <div class="modal-podium-item bronze"><span class="podium-position">3rd</span><span id="modal3Flag"></span> <span id="modal3">USA</span></div>
                 </div>
-                <div class="modal-topscorer">
-                    <div class="modal-label">Top Scorer</div>
-                    <div class="modal-topscorer-info">
-                        <span class="topscorer-flag" id="modal-scorer-flag">🇦🇷</span>
-                        <span class="topscorer-name" id="modal-scorer">Guillermo Stábile</span>
-                        <span class="topscorer-goals" id="modal-scorer-goals">8 goals</span>
-                    </div>
-                </div>
-                <div class="modal-trivia">
-                    <div class="modal-label">Historical Fact</div>
-                    <p class="modal-trivia-text" id="modal-trivia">It was the first World Cup in history.</p>
-                </div>
+                <div class="modal-topscorer"><div class="modal-label">Top Scorer</div><div class="modal-topscorer-info"><span id="modalScorerFlag"></span><span class="topscorer-name" id="modalScorer">G. Stabile</span><span class="topscorer-goals" id="modalScorerGoals">8 goals</span></div></div>
+                <div class="modal-trivia"><div class="modal-label">Did You Know?</div><p class="modal-trivia-text" id="modalTrivia">First World Cup ever.</p></div>
             </div>
         </div>
     </div>
@@ -455,80 +342,47 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-top">
-                <div class="footer-brand">
-                    <div class="footer-logo"><div class="footer-logo-icon">⚽</div><div class="footer-logo-text">WORLD CUP LEGACY</div></div>
-                    <p class="footer-description">An interactive experience dedicated to celebrating the history and glory of the FIFA World Cup.</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column"><h4>Explore</h4><ul><li><a href="#history">History</a></li><li><a href="#stats">Statistics</a></li><li><a href="#quiz">Quiz</a></li></ul></div>
-                    <div class="footer-column"><h4>Discover</h4><ul><li><a href="#">Champions</a></li><li><a href="#">Top Scorers</a></li><li><a href="#">Rankings</a></li></ul></div>
-                </div>
+                <div class="footer-brand"><div class="footer-logo"><div class="footer-logo-icon">&#9917;</div><div class="footer-logo-text">WORLD CUP LEGACY</div></div><p class="footer-description">An interactive experience celebrating the history and glory of the FIFA World Cup.</p></div>
+                <div class="footer-links"><div class="footer-column"><h4>Explore</h4><ul><li><a href="#history">History</a></li><li><a href="#stats">Statistics</a></li><li><a href="#quiz">Quiz</a></li></ul></div><div class="footer-column"><h4>Discover</h4><ul><li><a href="#">Champions</a></li><li><a href="#">Top Scorers</a></li><li><a href="#">Rankings</a></li></ul></div></div>
             </div>
-            <div class="footer-bottom">
-                <p class="footer-copyright">© 2024 World Cup Legacy. Made with passion for football.</p>
-                <div class="footer-social">
-                    <a href="#" class="footer-social-link">𝕏</a>
-                    <a href="#" class="footer-social-link">IG</a>
-                    <a href="#" class="footer-social-link">YT</a>
-                </div>
-            </div>
+            <div class="footer-bottom"><p class="footer-copyright">2024 World Cup Legacy. Made with passion for football.</p><div class="footer-social"><a href="#" class="footer-social-link">X</a><a href="#" class="footer-social-link">IG</a><a href="#" class="footer-social-link">YT</a></div></div>
         </div>
     </footer>
 
 <script>
-const mundialesData={1930:{year:1930,host:"Uruguay",hostFlag:"🇺🇾",champion:"Uruguay",championFlag:"🇺🇾",final:"Uruguay 4 - 2 Argentina",stadium:"Estadio Centenario, Montevideo",teams:13,matches:18,goals:70,attendance:"590K",first:"Uruguay",firstFlag:"🇺🇾",second:"Argentina",secondFlag:"🇦🇷",third:"United States",thirdFlag:"🇺🇸",topScorer:"Guillermo Stábile",topScorerFlag:"🇦🇷",topScorerGoals:"8 goals",trivia:"It was the first World Cup in history. Uruguay was chosen as host to celebrate the centenary of its independence."},1934:{year:1934,host:"Italy",hostFlag:"🇮🇹",champion:"Italy",championFlag:"🇮🇹",final:"Italy 2 - 1 Czechoslovakia (extra time)",stadium:"Stadio Nazionale PNF, Rome",teams:16,matches:17,goals:70,attendance:"363K",first:"Italy",firstFlag:"🇮🇹",second:"Czechoslovakia",secondFlag:"🇨🇿",third:"Germany",thirdFlag:"🇩🇪",topScorer:"Oldřich Nejedlý",topScorerFlag:"🇨🇿",topScorerGoals:"5 goals",trivia:"First World Cup with knockout format. Mussolini used the tournament as fascist propaganda."},1938:{year:1938,host:"France",hostFlag:"🇫🇷",champion:"Italy",championFlag:"🇮🇹",final:"Italy 4 - 2 Hungary",stadium:"Stade Olympique de Colombes, Paris",teams:15,matches:18,goals:84,attendance:"375K",first:"Italy",firstFlag:"🇮🇹",second:"Hungary",secondFlag:"🇭🇺",third:"Brazil",thirdFlag:"🇧🇷",topScorer:"Leônidas",topScorerFlag:"🇧🇷",topScorerGoals:"7 goals",trivia:"Italy became the first back-to-back champion. Last World Cup before WWII."},1950:{year:1950,host:"Brazil",hostFlag:"🇧🇷",champion:"Uruguay",championFlag:"🇺🇾",final:"Uruguay 2 - 1 Brazil",stadium:"Maracanã, Rio de Janeiro",teams:13,matches:22,goals:88,attendance:"1.04M",first:"Uruguay",firstFlag:"🇺🇾",second:"Brazil",secondFlag:"🇧🇷",third:"Sweden",thirdFlag:"🇸🇪",topScorer:"Ademir",topScorerFlag:"🇧🇷",topScorerGoals:"9 goals",trivia:"The 'Maracanazo': Uruguay defeated Brazil in front of 200,000 spectators. Biggest shock in football history."},1954:{year:1954,host:"Switzerland",hostFlag:"🇨🇭",champion:"Germany",championFlag:"🇩🇪",final:"Germany 3 - 2 Hungary",stadium:"Wankdorf Stadium, Bern",teams:16,matches:26,goals:140,attendance:"768K",first:"Germany",firstFlag:"🇩🇪",second:"Hungary",secondFlag:"🇭🇺",third:"Austria",thirdFlag:"🇦🇹",topScorer:"Sándor Kocsis",topScorerFlag:"🇭🇺",topScorerGoals:"11 goals",trivia:"The 'Miracle of Bern': Germany defeated favorite Hungary. Highest-scoring World Cup ever with 5.38 goals per match."},1958:{year:1958,host:"Sweden",hostFlag:"🇸🇪",champion:"Brazil",championFlag:"🇧🇷",final:"Brazil 5 - 2 Sweden",stadium:"Råsunda Stadium, Solna",teams:16,matches:35,goals:126,attendance:"819K",first:"Brazil",firstFlag:"🇧🇷",second:"Sweden",secondFlag:"🇸🇪",third:"France",thirdFlag:"🇫🇷",topScorer:"Just Fontaine",topScorerFlag:"🇫🇷",topScorerGoals:"13 goals",trivia:"Debut of 17-year-old Pelé. Just Fontaine set the record of 13 goals in a single World Cup."},1962:{year:1962,host:"Chile",hostFlag:"🇨🇱",champion:"Brazil",championFlag:"🇧🇷",final:"Brazil 3 - 1 Czechoslovakia",stadium:"Estadio Nacional, Santiago",teams:16,matches:32,goals:89,attendance:"893K",first:"Brazil",firstFlag:"🇧🇷",second:"Czechoslovakia",secondFlag:"🇨🇿",third:"Chile",thirdFlag:"🇨🇱",topScorer:"Garrincha / Vavá",topScorerFlag:"🇧🇷",topScorerGoals:"4 goals",trivia:"Brazil became back-to-back champions despite Pelé getting injured. Garrincha was the star."},1966:{year:1966,host:"England",hostFlag:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",champion:"England",championFlag:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",final:"England 4 - 2 Germany (extra time)",stadium:"Wembley Stadium, London",teams:16,matches:32,goals:89,attendance:"1.61M",first:"England",firstFlag:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",second:"Germany",secondFlag:"🇩🇪",third:"Portugal",thirdFlag:"🇵🇹",topScorer:"Eusébio",topScorerFlag:"🇵🇹",topScorerGoals:"9 goals",trivia:"England's only title. The controversial 'Ghost Goal' by Geoff Hurst. First World Cup in color TV."},1970:{year:1970,host:"Mexico",hostFlag:"🇲🇽",champion:"Brazil",championFlag:"🇧🇷",final:"Brazil 4 - 1 Italy",stadium:"Estadio Azteca, Mexico City",teams:16,matches:32,goals:95,attendance:"1.67M",first:"Brazil",firstFlag:"🇧🇷",second:"Italy",secondFlag:"🇮🇹",third:"Germany",thirdFlag:"🇩🇪",topScorer:"Gerd Müller",topScorerFlag:"🇩🇪",topScorerGoals:"10 goals",trivia:"Considered the best team ever. Brazil won their 3rd title and kept the Jules Rimet trophy permanently."},1974:{year:1974,host:"Germany",hostFlag:"🇩🇪",champion:"Germany",championFlag:"🇩🇪",final:"Germany 2 - 1 Netherlands",stadium:"Olympiastadion, Munich",teams:16,matches:38,goals:97,attendance:"1.86M",first:"Germany",firstFlag:"🇩🇪",second:"Netherlands",secondFlag:"🇳🇱",third:"Poland",thirdFlag:"🇵🇱",topScorer:"Grzegorz Lato",topScorerFlag:"🇵🇱",topScorerGoals:"7 goals",trivia:"Debut of Dutch 'Total Football' with Johan Cruyff. The new FIFA trophy was introduced."},1978:{year:1978,host:"Argentina",hostFlag:"🇦🇷",champion:"Argentina",championFlag:"🇦🇷",final:"Argentina 3 - 1 Netherlands (extra time)",stadium:"Estadio Monumental, Buenos Aires",teams:16,matches:38,goals:102,attendance:"1.55M",first:"Argentina",firstFlag:"🇦🇷",second:"Netherlands",secondFlag:"🇳🇱",third:"Brazil",thirdFlag:"🇧🇷",topScorer:"Mario Kempes",topScorerFlag:"🇦🇷",topScorerGoals:"6 goals",trivia:"Argentina's first title. Held during military dictatorship, generating international controversy."},1982:{year:1982,host:"Spain",hostFlag:"🇪🇸",champion:"Italy",championFlag:"🇮🇹",final:"Italy 3 - 1 Germany",stadium:"Santiago Bernabéu, Madrid",teams:24,matches:52,goals:146,attendance:"2.11M",first:"Italy",firstFlag:"🇮🇹",second:"Germany",secondFlag:"🇩🇪",third:"Poland",thirdFlag:"🇵🇱",topScorer:"Paolo Rossi",topScorerFlag:"🇮🇹",topScorerGoals:"6 goals",trivia:"Paolo Rossi won the Golden Ball just out of a ban. Zico's Brazil is considered the best team that never won."},1986:{year:1986,host:"Mexico",hostFlag:"🇲🇽",champion:"Argentina",championFlag:"🇦🇷",final:"Argentina 3 - 2 Germany",stadium:"Estadio Azteca, Mexico City",teams:24,matches:52,goals:132,attendance:"2.39M",first:"Argentina",firstFlag:"🇦🇷",second:"Germany",secondFlag:"🇩🇪",third:"France",thirdFlag:"🇫🇷",topScorer:"Gary Lineker",topScorerFlag:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",topScorerGoals:"6 goals",trivia:"Maradona's World Cup. 'Hand of God' and 'Goal of the Century' in the same match vs England."},1990:{year:1990,host:"Italy",hostFlag:"🇮🇹",champion:"Germany",championFlag:"🇩🇪",final:"Germany 1 - 0 Argentina",stadium:"Stadio Olimpico, Rome",teams:24,matches:52,goals:115,attendance:"2.52M",first:"Germany",firstFlag:"🇩🇪",second:"Argentina",secondFlag:"🇦🇷",third:"Italy",thirdFlag:"🇮🇹",topScorer:"Salvatore Schillaci",topScorerFlag:"🇮🇹",topScorerGoals:"6 goals",trivia:"The lowest-scoring World Cup. Roger Milla's Cameroon surprised by reaching quarterfinals."},1994:{year:1994,host:"United States",hostFlag:"🇺🇸",champion:"Brazil",championFlag:"🇧🇷",final:"Brazil 0(3) - 0(2) Italy",stadium:"Rose Bowl, Pasadena",teams:24,matches:52,goals:141,attendance:"3.59M",first:"Brazil",firstFlag:"🇧🇷",second:"Italy",secondFlag:"🇮🇹",third:"Sweden",thirdFlag:"🇸🇪",topScorer:"Oleg Salenko / Hristo Stoichkov",topScorerFlag:"🇷🇺",topScorerGoals:"6 goals",trivia:"First final decided by penalties. Roberto Baggio missed the decisive penalty. Maradona expelled for doping."},1998:{year:1998,host:"France",hostFlag:"🇫🇷",champion:"France",championFlag:"🇫🇷",final:"France 3 - 0 Brazil",stadium:"Stade de France, Saint-Denis",teams:32,matches:64,goals:171,attendance:"2.79M",first:"France",firstFlag:"🇫🇷",second:"Brazil",secondFlag:"🇧🇷",third:"Croatia",thirdFlag:"🇭🇷",topScorer:"Davor Šuker",topScorerFlag:"🇭🇷",topScorerGoals:"6 goals",trivia:"France's first title at home. Zidane scored a brace in the final. First time with 32 teams."},2002:{year:2002,host:"South Korea / Japan",hostFlag:"🇰🇷🇯🇵",champion:"Brazil",championFlag:"🇧🇷",final:"Brazil 2 - 0 Germany",stadium:"International Stadium, Yokohama",teams:32,matches:64,goals:161,attendance:"2.71M",first:"Brazil",firstFlag:"🇧🇷",second:"Germany",secondFlag:"🇩🇪",third:"Turkey",thirdFlag:"🇹🇷",topScorer:"Ronaldo",topScorerFlag:"🇧🇷",topScorerGoals:"8 goals",trivia:"First World Cup in Asia. Ronaldo redeemed himself as top scorer after 1998 trauma."},2006:{year:2006,host:"Germany",hostFlag:"🇩🇪",champion:"Italy",championFlag:"🇮🇹",final:"Italy 1(5) - 1(3) France",stadium:"Olympiastadion, Berlin",teams:32,matches:64,goals:147,attendance:"3.36M",first:"Italy",firstFlag:"🇮🇹",second:"France",secondFlag:"🇫🇷",third:"Germany",thirdFlag:"🇩🇪",topScorer:"Miroslav Klose",topScorerFlag:"🇩🇪",topScorerGoals:"5 goals",trivia:"Zidane's headbutt on Materazzi in his last match. Italy won their fourth title."},2010:{year:2010,host:"South Africa",hostFlag:"🇿🇦",champion:"Spain",championFlag:"🇪🇸",final:"Spain 1 - 0 Netherlands (extra time)",stadium:"Soccer City, Johannesburg",teams:32,matches:64,goals:145,attendance:"3.18M",first:"Spain",firstFlag:"🇪🇸",second:"Netherlands",secondFlag:"🇳🇱",third:"Germany",thirdFlag:"🇩🇪",topScorer:"Thomas Müller / David Villa",topScorerFlag:"🇩🇪",topScorerGoals:"5 goals",trivia:"First World Cup in Africa. Spain won their first title with tiki-taka. Vuvuzelas became world famous."},2014:{year:2014,host:"Brazil",hostFlag:"🇧🇷",champion:"Germany",championFlag:"🇩🇪",final:"Germany 1 - 0 Argentina (extra time)",stadium:"Maracanã, Rio de Janeiro",teams:32,matches:64,goals:171,attendance:"3.43M",first:"Germany",firstFlag:"🇩🇪",second:"Argentina",secondFlag:"🇦🇷",third:"Netherlands",thirdFlag:"🇳🇱",topScorer:"James Rodríguez",topScorerFlag:"🇨🇴",topScorerGoals:"6 goals",trivia:"The 'Mineirazo': Germany 7-1 Brazil in semifinals. Klose became all-time top scorer with 16 goals."},2018:{year:2018,host:"Russia",hostFlag:"🇷🇺",champion:"France",championFlag:"🇫🇷",final:"France 4 - 2 Croatia",stadium:"Luzhniki Stadium, Moscow",teams:32,matches:64,goals:169,attendance:"3.03M",first:"France",firstFlag:"🇫🇷",second:"Croatia",secondFlag:"🇭🇷",third:"Belgium",thirdFlag:"🇧🇪",topScorer:"Harry Kane",topScorerFlag:"🏴󠁧󠁢󠁥󠁮󠁧󠁿",topScorerGoals:"6 goals",trivia:"France champion with 19-year-old Mbappé. First World Cup with VAR. Germany eliminated in group stage."},2022:{year:2022,host:"Qatar",hostFlag:"🇶🇦",champion:"Argentina",championFlag:"🇦🇷",final:"Argentina 3(4) - 3(2) France",stadium:"Lusail Stadium, Lusail",teams:32,matches:64,goals:172,attendance:"3.40M",first:"Argentina",firstFlag:"🇦🇷",second:"France",secondFlag:"🇫🇷",third:"Croatia",thirdFlag:"🇭🇷",topScorer:"Kylian Mbappé",topScorerFlag:"🇫🇷",topScorerGoals:"8 goals",trivia:"Considered the best final ever. Messi finally won his World Cup. Mbappé scored a hat-trick in the final."}};
-
-const quizQuestions=[{category:"General History",question:"Which was the first country to win two consecutive World Cups?",options:["Brazil","Italy","Argentina","Germany"],correct:1},{category:"Top Scorers",question:"Who is the all-time top scorer in World Cup history?",options:["Ronaldo (Brazil)","Miroslav Klose","Gerd Müller","Just Fontaine"],correct:1},{category:"Records",question:"Which country has won the most World Cups?",options:["Germany","Italy","Brazil","Argentina"],correct:2},{category:"Finals",question:"In what year was the first final decided by penalties?",options:["1990","1994","1998","1986"],correct:1},{category:"History",question:"What is known as 'The Maracanazo'?",options:["Brazil 7-1 vs Germany","Uruguay 2-1 vs Brazil in 1950","Argentina vs England 1986","Italy vs Brazil 1970"],correct:1},{category:"Players",question:"Who scored the 'Goal of the Century' in Mexico 1986?",options:["Pelé","Diego Maradona","Johan Cruyff","Zinedine Zidane"],correct:1},{category:"Hosts",question:"What was the first World Cup held in Asia?",options:["Japan 2002","Korea-Japan 2002","Qatar 2022","China 2030"],correct:1},{category:"Trivia",question:"Which country reached the final in their first World Cup?",options:["Croatia","United States","Uruguay","France"],correct:2},{category:"Records",question:"How many goals did Just Fontaine score in 1958?",options:["10","11","12","13"],correct:3},{category:"Finals",question:"What was the result of the 2014 World Cup final?",options:["Germany 2-1 Argentina","Germany 1-0 Argentina","Argentina 1-0 Germany","Germany 3-2 Argentina"],correct:1},{category:"History",question:"How many years was the World Cup suspended due to WWII?",options:["8 years","10 years","12 years","14 years"],correct:2},{category:"Champions",question:"Which team won their first World Cup in 2010?",options:["Netherlands","Spain","Portugal","Belgium"],correct:1},{category:"Qatar 2022",question:"How many goals did Mbappé score in the Qatar 2022 final?",options:["1","2","3","4"],correct:2},{category:"Trivia",question:"Which country hosted a World Cup during a military dictatorship?",options:["Spain 1982","Argentina 1978","Chile 1962","Brazil 1950"],correct:1},{category:"Technology",question:"In which World Cup was VAR first implemented?",options:["Brazil 2014","Russia 2018","Qatar 2022","Germany 2006"],correct:1},{category:"Thrashings",question:"What is the biggest margin in a World Cup semifinal?",options:["Hungary 9-0 South Korea","Germany 7-1 Brazil","Sweden 6-1 Cuba","Austria 7-0 Switzerland"],correct:1},{category:"England 1966",question:"What controversy marked the 1966 England final?",options:["A non-existent penalty","The ghost goal","An unfair red card","A disallowed goal"],correct:1},{category:"Mascots",question:"What was the name of the first official World Cup mascot?",options:["Willie","Juanito","Naranjito","Fuleco"],correct:0},{category:"Trophies",question:"Which team permanently kept the Jules Rimet trophy?",options:["Italy","Uruguay","Brazil","Germany"],correct:2},{category:"Players",question:"Who is the youngest player to score in a World Cup final?",options:["Pelé","Kylian Mbappé","Michael Owen","Ronaldo"],correct:0}];
-
-let currentQuestion=0,score=0,answered=false;
-const shuffledQuestions=[...quizQuestions].sort(()=>Math.random()-0.5);
-
-window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('preloader').classList.add('loaded');setTimeout(()=>{document.getElementById('preloader').style.display='none'},1000)},2500)});
-
-const cursor=document.getElementById('cursor'),cursorDot=document.getElementById('cursor-dot');
-document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';cursorDot.style.left=e.clientX+'px';cursorDot.style.top=e.clientY+'px'});
-document.querySelectorAll('a,button,.quiz-option,.timeline-content,.stat-card').forEach(el=>{el.addEventListener('mouseenter',()=>cursor.classList.add('hover'));el.addEventListener('mouseleave',()=>cursor.classList.remove('hover'))});
-
-const bgGlow=document.getElementById('bg-glow');
-document.addEventListener('mousemove',e=>{bgGlow.style.transform=`translate(${e.clientX-400}px,${e.clientY-400+window.scrollY}px)`});
-
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>50)});
-
-const sections=document.querySelectorAll('section[id]'),navLinks=document.querySelectorAll('.nav-link');
-window.addEventListener('scroll',()=>{let current='';sections.forEach(s=>{if(scrollY>=s.offsetTop-200)current=s.id});navLinks.forEach(l=>{l.classList.toggle('active',l.getAttribute('href').slice(1)===current)})});
-
-const particles=document.getElementById('particles');
-for(let i=0;i<50;i++){const p=document.createElement('div');p.className='particle';p.style.left=Math.random()*100+'%';p.style.animationDelay=Math.random()*8+'s';p.style.animationDuration=(Math.random()*4+6)+'s';particles.appendChild(p)}
-
-const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
-document.querySelectorAll('.fade-in,.timeline-item').forEach(el=>observer.observe(el));
-
-const modalOverlay=document.getElementById('modal-overlay'),modalClose=document.getElementById('modal-close');
-function openModal(year){const d=mundialesData[year];if(!d)return;document.getElementById('modal-year').textContent=d.year;document.getElementById('modal-flag').textContent=d.hostFlag;document.getElementById('modal-country').textContent=d.host;document.getElementById('modal-champion-flag').textContent=d.championFlag;document.getElementById('modal-champion-country').textContent=d.champion;document.getElementById('modal-final').textContent=d.final;document.getElementById('modal-stadium').textContent=d.stadium;document.getElementById('modal-teams').textContent=d.teams;document.getElementById('modal-matches').textContent=d.matches;document.getElementById('modal-goals').textContent=d.goals;document.getElementById('modal-attendance').textContent=d.attendance;document.getElementById('modal-first-flag').textContent=d.firstFlag;document.getElementById('modal-first').textContent=d.first;document.getElementById('modal-second-flag').textContent=d.secondFlag;document.getElementById('modal-second').textContent=d.second;document.getElementById('modal-third-flag').textContent=d.thirdFlag;document.getElementById('modal-third').textContent=d.third;document.getElementById('modal-scorer-flag').textContent=d.topScorerFlag;document.getElementById('modal-scorer').textContent=d.topScorer;document.getElementById('modal-scorer-goals').textContent=d.topScorerGoals;document.getElementById('modal-trivia').textContent=d.trivia;modalOverlay.classList.add('active');document.body.style.overflow='hidden'}
-function closeModal(){modalOverlay.classList.remove('active');document.body.style.overflow=''}
-document.querySelectorAll('.timeline-item').forEach(item=>{item.querySelector('.timeline-content').addEventListener('click',()=>openModal(item.dataset.mundial))});
-modalClose.addEventListener('click',closeModal);
-modalOverlay.addEventListener('click',e=>{if(e.target===modalOverlay)closeModal()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
-
-const quizCategory=document.querySelector('.quiz-category'),quizQuestion=document.querySelector('.quiz-question'),quizOptions=document.querySelectorAll('.quiz-option'),quizProgressFill=document.querySelector('.quiz-progress-fill'),quizProgressText=document.querySelector('.quiz-progress-text'),quizScore=document.querySelector('.quiz-score span'),quizNextBtn=document.querySelector('.quiz-next-btn');
-
-function loadQuestion(){answered=false;const q=shuffledQuestions[currentQuestion];quizCategory.textContent=q.category;quizQuestion.textContent=q.question;quizOptions.forEach((opt,i)=>{opt.classList.remove('correct','incorrect');opt.querySelector('.quiz-option-text').textContent=q.options[i];opt.style.pointerEvents='auto'});quizProgressFill.style.width=((currentQuestion+1)/shuffledQuestions.length*100)+'%';quizProgressText.textContent=`${currentQuestion+1}/${shuffledQuestions.length}`;quizNextBtn.innerHTML=currentQuestion===shuffledQuestions.length-1?'See Results':'Next <span class="btn-icon">→</span>'}
-
-function selectOption(index){if(answered)return;answered=true;const q=shuffledQuestions[currentQuestion];quizOptions.forEach((opt,i)=>{opt.style.pointerEvents='none';if(i===q.correct)opt.classList.add('correct');else if(i===index)opt.classList.add('incorrect')});if(index===q.correct){score+=100;quizScore.textContent=score}}
-
-function nextQuestion(){if(!answered)return;currentQuestion++;if(currentQuestion>=shuffledQuestions.length)showFinalResult();else loadQuestion()}
-
-function showFinalResult(){const pct=Math.round(score/(shuffledQuestions.length*100)*100);let msg,emoji;if(pct>=90){msg="You're a World Cup expert!";emoji='🏆'}else if(pct>=70){msg='Great job!';emoji='🥇'}else if(pct>=50){msg='Not bad!';emoji='⚽'}else{msg='Keep learning!';emoji='📚'}document.querySelector('.quiz-body').innerHTML=`<div style="text-align:center;padding:3rem"><div style="font-size:5rem;margin-bottom:1.5rem">${emoji}</div><div style="font-family:var(--font-display);font-size:3rem;color:var(--gold-primary);margin-bottom:1rem">${score} pts</div><div style="font-family:var(--font-heading);font-size:1.5rem;color:var(--text-white);margin-bottom:1rem">${pct}% correct</div><div style="font-family:var(--font-body);font-size:1.1rem;color:var(--text-secondary);margin-bottom:2rem">${msg}</div><button onclick="location.reload()" class="btn btn-primary">Play Again <span class="btn-icon">↻</span></button></div>`;document.querySelector('.quiz-footer').style.display='none'}
-
-quizOptions.forEach((opt,i)=>opt.addEventListener('click',()=>selectOption(i)));
-quizNextBtn.addEventListener('click',nextQuestion);
-loadQuestion();
-
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
-
-console.log('%c⚽ FIFA WORLD CUP LEGACY ⚽','color:#d4af37;font-size:24px;font-weight:bold');
+(function(){
+var WC={"1930":{h:"Uruguay",hF:"\u{1F1FA}\u{1F1FE}",c:"Uruguay",cF:"\u{1F1FA}\u{1F1FE}",f:"Uruguay 4-2 Argentina",st:"Estadio Centenario, Montevideo",t:13,m:18,g:70,a:"590K",p1:"Uruguay",p1F:"\u{1F1FA}\u{1F1FE}",p2:"Argentina",p2F:"\u{1F1E6}\u{1F1F7}",p3:"USA",p3F:"\u{1F1FA}\u{1F1F8}",sc:"G. Stabile",scF:"\u{1F1E6}\u{1F1F7}",scG:"8 goals",tr:"First World Cup ever. Uruguay hosted to celebrate 100 years of independence."},"1934":{h:"Italy",hF:"\u{1F1EE}\u{1F1F9}",c:"Italy",cF:"\u{1F1EE}\u{1F1F9}",f:"Italy 2-1 Czechoslovakia",st:"Stadio Nazionale PNF, Rome",t:16,m:17,g:70,a:"363K",p1:"Italy",p1F:"\u{1F1EE}\u{1F1F9}",p2:"Czechoslovakia",p2F:"\u{1F1E8}\u{1F1FF}",p3:"Germany",p3F:"\u{1F1E9}\u{1F1EA}",sc:"O. Nejedly",scF:"\u{1F1E8}\u{1F1FF}",scG:"5 goals",tr:"First knockout-only format. Mussolini used it as fascist propaganda."},"1938":{h:"France",hF:"\u{1F1EB}\u{1F1F7}",c:"Italy",cF:"\u{1F1EE}\u{1F1F9}",f:"Italy 4-2 Hungary",st:"Stade Olympique, Paris",t:15,m:18,g:84,a:"375K",p1:"Italy",p1F:"\u{1F1EE}\u{1F1F9}",p2:"Hungary",p2F:"\u{1F1ED}\u{1F1FA}",p3:"Brazil",p3F:"\u{1F1E7}\u{1F1F7}",sc:"Leonidas",scF:"\u{1F1E7}\u{1F1F7}",scG:"7 goals",tr:"Italy became first back-to-back champion. Last WC before WWII."},"1950":{h:"Brazil",hF:"\u{1F1E7}\u{1F1F7}",c:"Uruguay",cF:"\u{1F1FA}\u{1F1FE}",f:"Uruguay 2-1 Brazil",st:"Maracana, Rio de Janeiro",t:13,m:22,g:88,a:"1.04M",p1:"Uruguay",p1F:"\u{1F1FA}\u{1F1FE}",p2:"Brazil",p2F:"\u{1F1E7}\u{1F1F7}",p3:"Sweden",p3F:"\u{1F1F8}\u{1F1EA}",sc:"Ademir",scF:"\u{1F1E7}\u{1F1F7}",scG:"9 goals",tr:"The Maracanazo: Uruguay shocked Brazil before 200,000 fans."},"1954":{h:"Switzerland",hF:"\u{1F1E8}\u{1F1ED}",c:"Germany",cF:"\u{1F1E9}\u{1F1EA}",f:"Germany 3-2 Hungary",st:"Wankdorf Stadium, Bern",t:16,m:26,g:140,a:"768K",p1:"Germany",p1F:"\u{1F1E9}\u{1F1EA}",p2:"Hungary",p2F:"\u{1F1ED}\u{1F1FA}",p3:"Austria",p3F:"\u{1F1E6}\u{1F1F9}",sc:"S. Kocsis",scF:"\u{1F1ED}\u{1F1FA}",scG:"11 goals",tr:"Miracle of Bern: Germany beat undefeated Hungary. Highest-scoring WC ever."},"1958":{h:"Sweden",hF:"\u{1F1F8}\u{1F1EA}",c:"Brazil",cF:"\u{1F1E7}\u{1F1F7}",f:"Brazil 5-2 Sweden",st:"Rasunda Stadium, Solna",t:16,m:35,g:126,a:"819K",p1:"Brazil",p1F:"\u{1F1E7}\u{1F1F7}",p2:"Sweden",p2F:"\u{1F1F8}\u{1F1EA}",p3:"France",p3F:"\u{1F1EB}\u{1F1F7}",sc:"J. Fontaine",scF:"\u{1F1EB}\u{1F1F7}",scG:"13 goals",tr:"17-year-old Pele debuted. Fontaine's 13 goals remain the single-tournament record."},"1962":{h:"Chile",hF:"\u{1F1E8}\u{1F1F1}",c:"Brazil",cF:"\u{1F1E7}\u{1F1F7}",f:"Brazil 3-1 Czechoslovakia",st:"Estadio Nacional, Santiago",t:16,m:32,g:89,a:"893K",p1:"Brazil",p1F:"\u{1F1E7}\u{1F1F7}",p2:"Czechoslovakia",p2F:"\u{1F1E8}\u{1F1FF}",p3:"Chile",p3F:"\u{1F1E8}\u{1F1F1}",sc:"Garrincha",scF:"\u{1F1E7}\u{1F1F7}",scG:"4 goals",tr:"Brazil won despite Pele's injury. Garrincha was the star."},"1966":{h:"England",hF:"\u{1F1EC}\u{1F1E7}",c:"England",cF:"\u{1F1EC}\u{1F1E7}",f:"England 4-2 Germany",st:"Wembley Stadium, London",t:16,m:32,g:89,a:"1.61M",p1:"England",p1F:"\u{1F1EC}\u{1F1E7}",p2:"Germany",p2F:"\u{1F1E9}\u{1F1EA}",p3:"Portugal",p3F:"\u{1F1F5}\u{1F1F9}",sc:"Eusebio",scF:"\u{1F1F5}\u{1F1F9}",scG:"9 goals",tr:"England's only title. The controversial Ghost Goal. First color TV broadcast."},"1970":{h:"Mexico",hF:"\u{1F1F2}\u{1F1FD}",c:"Brazil",cF:"\u{1F1E7}\u{1F1F7}",f:"Brazil 4-1 Italy",st:"Estadio Azteca, Mexico City",t:16,m:32,g:95,a:"1.67M",p1:"Brazil",p1F:"\u{1F1E7}\u{1F1F7}",p2:"Italy",p2F:"\u{1F1EE}\u{1F1F9}",p3:"Germany",p3F:"\u{1F1E9}\u{1F1EA}",sc:"G. Muller",scF:"\u{1F1E9}\u{1F1EA}",scG:"10 goals",tr:"Best team ever. Brazil kept Jules Rimet trophy permanently after 3rd title."},"1974":{h:"Germany",hF:"\u{1F1E9}\u{1F1EA}",c:"Germany",cF:"\u{1F1E9}\u{1F1EA}",f:"Germany 2-1 Netherlands",st:"Olympiastadion, Munich",t:16,m:38,g:97,a:"1.86M",p1:"Germany",p1F:"\u{1F1E9}\u{1F1EA}",p2:"Netherlands",p2F:"\u{1F1F3}\u{1F1F1}",p3:"Poland",p3F:"\u{1F1F5}\u{1F1F1}",sc:"G. Lato",scF:"\u{1F1F5}\u{1F1F1}",scG:"7 goals",tr:"Dutch Total Football with Cruyff. New FIFA trophy introduced."},"1978":{h:"Argentina",hF:"\u{1F1E6}\u{1F1F7}",c:"Argentina",cF:"\u{1F1E6}\u{1F1F7}",f:"Argentina 3-1 Netherlands",st:"Estadio Monumental, Buenos Aires",t:16,m:38,g:102,a:"1.55M",p1:"Argentina",p1F:"\u{1F1E6}\u{1F1F7}",p2:"Netherlands",p2F:"\u{1F1F3}\u{1F1F1}",p3:"Brazil",p3F:"\u{1F1E7}\u{1F1F7}",sc:"M. Kempes",scF:"\u{1F1E6}\u{1F1F7}",scG:"6 goals",tr:"Argentina's first title. Held during military dictatorship."},"1982":{h:"Spain",hF:"\u{1F1EA}\u{1F1F8}",c:"Italy",cF:"\u{1F1EE}\u{1F1F9}",f:"Italy 3-1 Germany",st:"Santiago Bernabeu, Madrid",t:24,m:52,g:146,a:"2.11M",p1:"Italy",p1F:"\u{1F1EE}\u{1F1F9}",p2:"Germany",p2F:"\u{1F1E9}\u{1F1EA}",p3:"Poland",p3F:"\u{1F1F5}\u{1F1F1}",sc:"P. Rossi",scF:"\u{1F1EE}\u{1F1F9}",scG:"6 goals",tr:"Paolo Rossi won Golden Ball just out of a ban. Zico's Brazil never won."},"1986":{h:"Mexico",hF:"\u{1F1F2}\u{1F1FD}",c:"Argentina",cF:"\u{1F1E6}\u{1F1F7}",f:"Argentina 3-2 Germany",st:"Estadio Azteca, Mexico City",t:24,m:52,g:132,a:"2.39M",p1:"Argentina",p1F:"\u{1F1E6}\u{1F1F7}",p2:"Germany",p2F:"\u{1F1E9}\u{1F1EA}",p3:"France",p3F:"\u{1F1EB}\u{1F1F7}",sc:"G. Lineker",scF:"\u{1F1EC}\u{1F1E7}",scG:"6 goals",tr:"Maradona's WC. Hand of God and Goal of the Century in same match."},"1990":{h:"Italy",hF:"\u{1F1EE}\u{1F1F9}",c:"Germany",cF:"\u{1F1E9}\u{1F1EA}",f:"Germany 1-0 Argentina",st:"Stadio Olimpico, Rome",t:24,m:52,g:115,a:"2.52M",p1:"Germany",p1F:"\u{1F1E9}\u{1F1EA}",p2:"Argentina",p2F:"\u{1F1E6}\u{1F1F7}",p3:"Italy",p3F:"\u{1F1EE}\u{1F1F9}",sc:"S. Schillaci",scF:"\u{1F1EE}\u{1F1F9}",scG:"6 goals",tr:"Lowest-scoring WC. Cameroon surprised reaching quarters."},"1994":{h:"USA",hF:"\u{1F1FA}\u{1F1F8}",c:"Brazil",cF:"\u{1F1E7}\u{1F1F7}",f:"Brazil 0(3)-0(2) Italy",st:"Rose Bowl, Pasadena",t:24,m:52,g:141,a:"3.59M",p1:"Brazil",p1F:"\u{1F1E7}\u{1F1F7}",p2:"Italy",p2F:"\u{1F1EE}\u{1F1F9}",p3:"Sweden",p3F:"\u{1F1F8}\u{1F1EA}",sc:"O. Salenko",scF:"\u{1F1F7}\u{1F1FA}",scG:"6 goals",tr:"First final on penalties. Baggio missed the decisive kick."},"1998":{h:"France",hF:"\u{1F1EB}\u{1F1F7}",c:"France",cF:"\u{1F1EB}\u{1F1F7}",f:"France 3-0 Brazil",st:"Stade de France, Paris",t:32,m:64,g:171,a:"2.79M",p1:"France",p1F:"\u{1F1EB}\u{1F1F7}",p2:"Brazil",p2F:"\u{1F1E7}\u{1F1F7}",p3:"Croatia",p3F:"\u{1F1ED}\u{1F1F7}",sc:"D. Suker",scF:"\u{1F1ED}\u{1F1F7}",scG:"6 goals",tr:"France's first title at home. Zidane scored twice in the final."},"2002":{h:"Korea/Japan",hF:"\u{1F1F0}\u{1F1F7}\u{1F1EF}\u{1F1F5}",c:"Brazil",cF:"\u{1F1E7}\u{1F1F7}",f:"Brazil 2-0 Germany",st:"Yokohama Stadium",t:32,m:64,g:161,a:"2.71M",p1:"Brazil",p1F:"\u{1F1E7}\u{1F1F7}",p2:"Germany",p2F:"\u{1F1E9}\u{1F1EA}",p3:"Turkey",p3F:"\u{1F1F9}\u{1F1F7}",sc:"Ronaldo",scF:"\u{1F1E7}\u{1F1F7}",scG:"8 goals",tr:"First Asian WC. Ronaldo redeemed after 1998 final mystery."},"2006":{h:"Germany",hF:"\u{1F1E9}\u{1F1EA}",c:"Italy",cF:"\u{1F1EE}\u{1F1F9}",f:"Italy 1(5)-1(3) France",st:"Olympiastadion, Berlin",t:32,m:64,g:147,a:"3.36M",p1:"Italy",p1F:"\u{1F1EE}\u{1F1F9}",p2:"France",p2F:"\u{1F1EB}\u{1F1F7}",p3:"Germany",p3F:"\u{1F1E9}\u{1F1EA}",sc:"M. Klose",scF:"\u{1F1E9}\u{1F1EA}",scG:"5 goals",tr:"Zidane's headbutt on Materazzi in his final match."},"2010":{h:"South Africa",hF:"\u{1F1FF}\u{1F1E6}",c:"Spain",cF:"\u{1F1EA}\u{1F1F8}",f:"Spain 1-0 Netherlands",st:"Soccer City, Johannesburg",t:32,m:64,g:145,a:"3.18M",p1:"Spain",p1F:"\u{1F1EA}\u{1F1F8}",p2:"Netherlands",p2F:"\u{1F1F3}\u{1F1F1}",p3:"Germany",p3F:"\u{1F1E9}\u{1F1EA}",sc:"T. Muller",scF:"\u{1F1E9}\u{1F1EA}",scG:"5 goals",tr:"First African WC. Spain won with tiki-taka. Vuvuzelas!"},"2014":{h:"Brazil",hF:"\u{1F1E7}\u{1F1F7}",c:"Germany",cF:"\u{1F1E9}\u{1F1EA}",f:"Germany 1-0 Argentina",st:"Maracana, Rio de Janeiro",t:32,m:64,g:171,a:"3.43M",p1:"Germany",p1F:"\u{1F1E9}\u{1F1EA}",p2:"Argentina",p2F:"\u{1F1E6}\u{1F1F7}",p3:"Netherlands",p3F:"\u{1F1F3}\u{1F1F1}",sc:"J. Rodriguez",scF:"\u{1F1E8}\u{1F1F4}",scG:"6 goals",tr:"Mineirazo: Germany 7-1 Brazil. Klose became all-time top scorer."},"2018":{h:"Russia",hF:"\u{1F1F7}\u{1F1FA}",c:"France",cF:"\u{1F1EB}\u{1F1F7}",f:"France 4-2 Croatia",st:"Luzhniki Stadium, Moscow",t:32,m:64,g:169,a:"3.03M",p1:"France",p1F:"\u{1F1EB}\u{1F1F7}",p2:"Croatia",p2F:"\u{1F1ED}\u{1F1F7}",p3:"Belgium",p3F:"\u{1F1E7}\u{1F1EA}",sc:"H. Kane",scF:"\u{1F1EC}\u{1F1E7}",scG:"6 goals",tr:"19-year-old Mbappe shined. First WC with VAR."},"2022":{h:"Qatar",hF:"\u{1F1F6}\u{1F1E6}",c:"Argentina",cF:"\u{1F1E6}\u{1F1F7}",f:"Argentina 3(4)-3(2) France",st:"Lusail Stadium",t:32,m:64,g:172,a:"3.40M",p1:"Argentina",p1F:"\u{1F1E6}\u{1F1F7}",p2:"France",p2F:"\u{1F1EB}\u{1F1F7}",p3:"Croatia",p3F:"\u{1F1ED}\u{1F1F7}",sc:"K. Mbappe",scF:"\u{1F1EB}\u{1F1F7}",scG:"8 goals",tr:"Greatest final ever. Messi finally won. Mbappe hat-trick."}};
+var QZ=[{c:"History",q:"First country to win 2 consecutive WCs?",o:["Brazil","Italy","Argentina","Germany"],a:1},{c:"Records",q:"All-time WC top scorer?",o:["Ronaldo","Klose","Muller","Fontaine"],a:1},{c:"Champions",q:"Most WC titles?",o:["Germany","Italy","Brazil","Argentina"],a:2},{c:"Finals",q:"First final on penalties?",o:["1990","1994","1998","1986"],a:1},{c:"History",q:"What is the Maracanazo?",o:["Brazil 7-1 loss","Uruguay beat Brazil 1950","Maradona goal","Italy win"],a:1},{c:"Goals",q:"Who scored Goal of the Century?",o:["Pele","Maradona","Cruyff","Zidane"],a:1},{c:"Hosts",q:"First WC in Asia?",o:["Japan 2002","Korea-Japan 2002","Qatar 2022","None"],a:1},{c:"Records",q:"Fontaine's goals in 1958?",o:["10","11","12","13"],a:3},{c:"Finals",q:"2014 final result?",o:["Germany 2-1","Germany 1-0","Argentina 1-0","Germany 3-2"],a:1},{c:"History",q:"Years suspended for WWII?",o:["8","10","12","14"],a:2},{c:"Champions",q:"First title in 2010?",o:["Netherlands","Spain","Portugal","Belgium"],a:1},{c:"Qatar",q:"Mbappe goals in 2022 final?",o:["1","2","3","4"],a:2},{c:"History",q:"WC during dictatorship?",o:["Spain 82","Argentina 78","Chile 62","Brazil 50"],a:1},{c:"Tech",q:"First WC with VAR?",o:["2014","2018","2022","2006"],a:1},{c:"Records",q:"Biggest semifinal margin?",o:["Hungary 9-0","Germany 7-1","Sweden 6-1","Austria 7-0"],a:1},{c:"1966",q:"1966 final controversy?",o:["Penalty","Ghost goal","Red card","Offside"],a:1},{c:"Mascots",q:"First official mascot?",o:["Willie","Juanito","Naranjito","Fuleco"],a:0},{c:"Trophies",q:"Who kept Jules Rimet?",o:["Italy","Uruguay","Brazil","Germany"],a:2},{c:"Players",q:"Youngest final scorer?",o:["Pele","Mbappe","Owen","Ronaldo"],a:0},{c:"Goals",q:"Klose's total WC goals?",o:["14","15","16","17"],a:2}];
+var cQ=0,sc=0,ans=false,shQ=QZ.sort(function(){return Math.random()-0.5});
+document.addEventListener("DOMContentLoaded",function(){
+setTimeout(function(){document.getElementById("preloader").classList.add("loaded")},2500);
+var cu=document.getElementById("cursor"),cd=document.getElementById("cursorDot");
+document.addEventListener("mousemove",function(e){cu.style.left=e.clientX+"px";cu.style.top=e.clientY+"px";cd.style.left=e.clientX+"px";cd.style.top=e.clientY+"px"});
+document.querySelectorAll("a,button,.timeline-content,.stat-card,.quiz-option").forEach(function(el){el.addEventListener("mouseenter",function(){cu.classList.add("hover")});el.addEventListener("mouseleave",function(){cu.classList.remove("hover")})});
+var gl=document.getElementById("bgGlow");
+document.addEventListener("mousemove",function(e){gl.style.transform="translate("+(e.clientX-400)+"px,"+(e.clientY-400+window.scrollY)+"px)"});
+var nv=document.getElementById("nav");
+window.addEventListener("scroll",function(){nv.classList.toggle("scrolled",window.scrollY>50)});
+var secs=document.querySelectorAll("section[id]"),lks=document.querySelectorAll(".nav-link");
+window.addEventListener("scroll",function(){var cur="";secs.forEach(function(s){if(window.scrollY>=s.offsetTop-200)cur=s.id});lks.forEach(function(l){l.classList.toggle("active",l.getAttribute("href").slice(1)===cur)})});
+var pt=document.getElementById("particles");
+for(var i=0;i<50;i++){var p=document.createElement("div");p.className="particle";p.style.left=Math.random()*100+"%";p.style.animationDelay=Math.random()*8+"s";p.style.animationDuration=(Math.random()*4+6)+"s";pt.appendChild(p)}
+var obs=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting)e.target.classList.add("visible")})},{threshold:0.1});
+document.querySelectorAll(".fade-in,.timeline-item").forEach(function(el){obs.observe(el)});
+var mo=document.getElementById("modalOverlay");
+document.querySelectorAll(".timeline-item").forEach(function(it){it.querySelector(".timeline-content").addEventListener("click",function(){var y=it.getAttribute("data-year"),d=WC[y];if(!d)return;document.getElementById("modalYear").textContent=y;document.getElementById("modalFlag").textContent=d.hF;document.getElementById("modalCountry").textContent=d.h;document.getElementById("modalChampFlag").textContent=d.cF;document.getElementById("modalChamp").textContent=d.c;document.getElementById("modalFinal").textContent=d.f;document.getElementById("modalStadium").textContent=d.st;document.getElementById("modalTeams").textContent=d.t;document.getElementById("modalMatches").textContent=d.m;document.getElementById("modalGoals").textContent=d.g;document.getElementById("modalAtt").textContent=d.a;document.getElementById("modal1Flag").textContent=d.p1F;document.getElementById("modal1").textContent=d.p1;document.getElementById("modal2Flag").textContent=d.p2F;document.getElementById("modal2").textContent=d.p2;document.getElementById("modal3Flag").textContent=d.p3F;document.getElementById("modal3").textContent=d.p3;document.getElementById("modalScorerFlag").textContent=d.scF;document.getElementById("modalScorer").textContent=d.sc;document.getElementById("modalScorerGoals").textContent=d.scG;document.getElementById("modalTrivia").textContent=d.tr;mo.classList.add("active");document.body.style.overflow="hidden"})});
+document.getElementById("modalClose").addEventListener("click",clM);
+mo.addEventListener("click",function(e){if(e.target===mo)clM()});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")clM()});
+function clM(){mo.classList.remove("active");document.body.style.overflow=""}
+ldQ();
+document.getElementById("quizNext").addEventListener("click",nxQ);
+function ldQ(){ans=false;var q=shQ[cQ];document.getElementById("quizCat").textContent=q.c;document.getElementById("quizQ").textContent=q.q;document.getElementById("quizProgress").style.width=((cQ+1)/shQ.length*100)+"%";document.getElementById("quizProgressText").textContent=(cQ+1)+"/"+shQ.length;var h="",lt=["A","B","C","D"];q.o.forEach(function(op,i){h+='<div class="quiz-option" data-i="'+i+'"><span class="quiz-option-letter">'+lt[i]+'</span><span class="quiz-option-text">'+op+'</span></div>'});document.getElementById("quizOpts").innerHTML=h;document.querySelectorAll(".quiz-option").forEach(function(op){op.addEventListener("click",function(){slO(parseInt(this.getAttribute("data-i")))})});document.getElementById("quizNext").innerHTML=cQ===shQ.length-1?"See Results":"Next \u2192"}
+function slO(i){if(ans)return;ans=true;var q=shQ[cQ];document.querySelectorAll(".quiz-option").forEach(function(op,j){op.style.pointerEvents="none";if(j===q.a)op.classList.add("correct");else if(j===i)op.classList.add("incorrect")});if(i===q.a){sc+=100;document.getElementById("quizScore").textContent=sc}}
+function nxQ(){if(!ans)return;cQ++;if(cQ>=shQ.length)shR();else ldQ()}
+function shR(){var pct=Math.round(sc/(shQ.length*100)*100);var msg,em;if(pct>=90){msg="World Cup Expert!";em="\u{1F3C6}"}else if(pct>=70){msg="Great job!";em="\u{1F947}"}else if(pct>=50){msg="Not bad!";em="\u26BD"}else{msg="Keep learning!";em="\u{1F4DA}"}document.getElementById("quizBody").innerHTML='<div style="text-align:center;padding:4rem"><div style="font-size:5rem">'+em+'</div><div style="font-family:var(--font-display);font-size:3rem;color:var(--gold-primary);margin:1rem 0">'+sc+' pts</div><div style="font-family:var(--font-heading);font-size:1.5rem;color:var(--text-white)">'+pct+'% correct</div><div style="font-size:1.1rem;color:var(--text-secondary);margin:1rem 0 2rem">'+msg+'</div><button onclick="location.reload()" class="btn btn-primary">Play Again</button></div>';document.getElementById("quizFooter").style.display="none"}
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();var t=document.querySelector(this.getAttribute("href"));if(t)t.scrollIntoView({behavior:"smooth"})})})
+})})();
 </script>
 </body>
 </html>
